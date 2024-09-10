@@ -1,10 +1,9 @@
 import React from 'react';
-// Ensure the path is correct based on your project structure
+
 
 const HeroSection = () => {
   return (
     <section className="relative bg-gray-100 py-12 px-6 flex flex-col items-center justify-center h-screen">
-      {/* Hero Image */}
       <div className="absolute inset-0 z-0">
         <img
           src="https://www.helpside.com/wp-content/uploads/2021/01/AdobeStock_238255151-2048x1365.jpeg"
@@ -13,7 +12,7 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Overlay Content */}
+      
       <div className="relative z-10 text-center">
         <h1 className="text-5xl font-bold text-white mb-4">
           From Interview to Career Success
@@ -22,7 +21,7 @@ const HeroSection = () => {
           JOB finding is becoming smart
         </p>
 
-        {/* Enhanced Search Bar */}
+     
         <div className="flex items-center justify-center mt-6">
           <div className="flex relative max-w-lg w-full shadow-lg">
             <input

@@ -14,13 +14,13 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-purple-100 shadow-md p-4 px-20 flex justify-between items-center">
-      {/* Logo on the left */}
+    <nav className="bg-purple-100  shadow-md p-4 px-20 flex justify-between items-center">
+      
       <div className="text-2xl font-extrabold text-left text-purple-600">
         Interwin
       </div>
 
-      {/* Center items */}
+     
       <div className="flex space-x-8 text-lg">
         <a href="#jobs" className="hover:underline hover:text-purple-600">Jobs</a>
         <a href="#internships" className="hover:underline hover:text-purple-600">Internships</a>
@@ -28,9 +28,9 @@ const Navbar = () => {
         <a href="#internships" className="hover:underline hover:text-purple-600">Companies</a>
       </div>
 
-      {/* Right side items */}
+      
       <div className="flex items-center space-x-8">
-        {/* Chatbot Icon */}
+       
         <div className="relative">
           <button>
             <img
@@ -41,7 +41,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Login Button with Dropdown */}
+       
         <div className="relative">
           <button
             onClick={toggleLoginDropdown}
@@ -72,12 +72,12 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Register Button */}
+        
         <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
           Register
         </button>
 
-        {/* Avatar with Dropdown */}
+        
         <div className="relative">
           <button
             onClick={toggleAvatarDropdown}

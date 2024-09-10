@@ -16,7 +16,7 @@ const WhatWeOfferSection = () => {
     'feedback system',
     'Skill evaluation',
     'Resume generator',
-    'Sort by'
+    
   ];
 
   return (
