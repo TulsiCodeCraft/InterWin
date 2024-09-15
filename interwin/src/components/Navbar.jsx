@@ -1,6 +1,6 @@
 import React, { useState,useRef } from 'react';
 import chatbot from '../assets/chatbot.png';
-import ChatbotUI from '../pages/ChatbotUI.JSX'; // Make sure to create this component in a separate file
+import ChatbotUI from '../pages/ChatbotUI.JSX'; 
 
 const Navbar = () => {
   const [loginDropdownOpen, setLoginDropdownOpen] = useState(false);
