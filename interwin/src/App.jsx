@@ -7,6 +7,8 @@ import LoginScreen from './pages/Login';
 import OTPVerificationScreen from './pages/OTP';
 import ForgotPasswordScreen from './pages/ForgotPassword';
 import ResetPasswordScreen from './pages/ResetPassword';
+import ResumeMaker from './pages/Resume/ResumeMaker';
+import ResumeTemplates from './pages/Resume/ResumeTemplates';
 
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
             <Route path="/otp" element={<OTPVerificationScreen />} />
             <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
             <Route path="/reset-password" element={<ResetPasswordScreen />} />
+            <Route path="/resume-maker" element={<ResumeMaker />} />
+            <Route path="/resume-templates" element={<ResumeTemplates />} />
 
 
             
