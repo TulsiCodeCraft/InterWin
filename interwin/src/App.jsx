@@ -9,6 +9,8 @@ import ForgotPasswordScreen from './pages/ForgotPassword';
 import ResetPasswordScreen from './pages/ResetPassword';
 import ResumeMaker from './pages/Resume/ResumeMaker';
 import ResumeTemplates from './pages/Resume/ResumeTemplates';
+import EnterDetails from './pages/Resume/EnterDetails';
+import DownloadResume from './pages/Resume/DownloadResume';
 
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
             <Route path="/reset-password" element={<ResetPasswordScreen />} />
             <Route path="/resume-maker" element={<ResumeMaker />} />
             <Route path="/resume-templates" element={<ResumeTemplates />} />
+            <Route path="/enter-details" element={<EnterDetails />} />
+            <Route path="/download-resume" element={<DownloadResume />} />
 
 
             

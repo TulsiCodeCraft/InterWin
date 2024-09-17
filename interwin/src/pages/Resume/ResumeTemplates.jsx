@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const templates = [
     { id: 1, name: 'Santiago', users: '430,000+', image: 'https://career.io/assets/templates/singapore-a24660c6abb19f0085b7131d0577ee94d5f870bb05eec5368d7b445580a738f7.jpg' },
@@ -14,6 +15,7 @@ const templates = [
 const ResumeTemplates = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedTemplate, setSelectedTemplate] = useState(null);
+    const navigate = useNavigate();
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) =>
@@ -25,6 +27,11 @@ const ResumeTemplates = () => {
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? templates.length - 3 : prevIndex - 1
         );
+    };
+
+    const handleTemplateSelection = (templateId) => {
+        setSelectedTemplate(templateId);
+        navigate('/enter-details', { state: { templateId } });
     };
 
     return (
@@ -56,7 +63,7 @@ const ResumeTemplates = () => {
                         <div
                             key={template.id}
                             className="w-1/3 flex-shrink-0 bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer"
-                            onClick={() => setSelectedTemplate(template.id)}
+                            onClick={() => handleTemplateSelection(template.id)}
                         >
                             <img src={template.image} alt={template.name} className="w-full h-96 object-cover" />
                             <div className="p-4">
