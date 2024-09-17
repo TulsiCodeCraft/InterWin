@@ -59,14 +59,14 @@ const ResumeMaker = () => {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold text-center mb-8">Job-winning resume templates</h1>
+            <h1 className="text-4xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text">Job-winning resume templates</h1>
             <p className="text-center mb-8 text-gray-600">
                 Each resume template is designed to follow the exact rules you need to get hired faster.
                 <br />
                 Use our resume templates and get free access to 18 more career tools!
             </p>
             <div className="flex justify-center mb-8">
-                <button className="bg-blue-500 text-white px-6 py-2 rounded-full font-semibold"
+                <button className=" bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600"
                       onClick={handleCreateResume}
                 >
                     Create my resume
