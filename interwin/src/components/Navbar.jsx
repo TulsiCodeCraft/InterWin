@@ -82,16 +82,19 @@ const Navbar = () => {
             </button>
             {loginDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-purple-100 border border-gray-200 shadow-md rounded-lg z-50">
-                <a href="#login-recruiter" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <Link to="/login-recruiter" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Login as Recruiter
-                </a>
+                </Link>
+                <Link Link to="/login" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                  Login as Student
+                </Link>
               </div>
             )}
           </div>
 
-          <button className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
+          <Link to="/register" className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">
             Register
-          </button>
+          </Link>
 
           <div className="relative">
             <button
@@ -110,7 +113,7 @@ const Navbar = () => {
                   Profile
                 </a>
                 <a href="#settings" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
-                  Settings
+                  My Application
                 </a>
                 <a href="#logout" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Logout
