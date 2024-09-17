@@ -11,7 +11,8 @@ import ResumeMaker from './pages/Resume/ResumeMaker';
 import ResumeTemplates from './pages/Resume/ResumeTemplates';
 import EnterDetails from './pages/Resume/EnterDetails';
 import DownloadResume from './pages/Resume/DownloadResume';
-import JobListingPage from './pages/Job_Listing/JobListingPage';
+import JobListingPage from './pages/Job-Listing/JobListingPage';
+import InternshipListingPage from './pages/Internships-Listing/InternshipListingPage';
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/enter-details" element={<EnterDetails />} />
             <Route path="/download-resume" element={<DownloadResume />} />
             <Route path="/job-listing" element={<JobListingPage />} />
+            <Route path="/internships-listing" element={<InternshipListingPage />} />
 
 
 

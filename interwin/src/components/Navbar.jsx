@@ -33,9 +33,15 @@ const Navbar = () => {
         <Link to="/job-listing" className="hover:underline hover:text-purple-600">
         Jobs
       </Link>
-          <a href="#internships" className="hover:underline hover:text-purple-600">Internships</a>
-          <a href="#services" className="hover:underline hover:text-purple-600">Services</a>
-          <a href="#companies" className="hover:underline hover:text-purple-600">Companies</a>
+      <Link to="/internships-listing" className="hover:underline hover:text-purple-600">
+        Internships
+      </Link>
+      <Link to="/services" className="hover:underline hover:text-purple-600">
+        Services
+      </Link>
+      <Link to="/companies" className="hover:underline hover:text-purple-600">
+        Companies
+      </Link>
         </div>
 
         <div className="flex items-center space-x-8">
