@@ -513,7 +513,7 @@ const EnterDetails = () => {
                 <div className="flex justify-end">
                     <button
                         type="submit"
-                        className="px-6 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 text-center justify-center"
+                        className=" text-center justify-center bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600"
                     >
                         Submit
                     </button>
