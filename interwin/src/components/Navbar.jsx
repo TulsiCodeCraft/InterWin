@@ -1,12 +1,14 @@
 import React, { useState,useRef } from 'react';
 import chatbot from '../assets/chatbot.png';
 import ChatbotUI from '../pages/ChatbotUI.JSX'; 
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [loginDropdownOpen, setLoginDropdownOpen] = useState(false);
   const [avatarDropdownOpen, setAvatarDropdownOpen] = useState(false);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const chatbotIconRef = useRef(null);
+
 
   const toggleLoginDropdown = () => {
     setLoginDropdownOpen(!loginDropdownOpen);
@@ -28,7 +30,9 @@ const Navbar = () => {
         </div>
 
         <div className="flex space-x-8 text-lg">
-          <a href="#jobs" className="hover:underline hover:text-purple-600">Jobs</a>
+        <Link to="/job-listing" className="hover:underline hover:text-purple-600">
+        Jobs
+      </Link>
           <a href="#internships" className="hover:underline hover:text-purple-600">Internships</a>
           <a href="#services" className="hover:underline hover:text-purple-600">Services</a>
           <a href="#companies" className="hover:underline hover:text-purple-600">Companies</a>
