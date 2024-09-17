@@ -44,7 +44,7 @@ const LoginScreen = () => {
 
              
                 <div className="w-1/2 p-6">
-                    <h2 className="text-2xl font-bold mb-6">Login</h2>
+                    <h2 className="text-2xl font-bold mb-6">Login as Student</h2>
                     <form className="space-y-4">
                         <input type="email" placeholder="Enter Email Id" className="w-full p-2 border rounded" />
                         <input type="tel" placeholder="Enter Phone No" className="w-full p-2 border rounded" />
