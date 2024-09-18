@@ -69,11 +69,11 @@ function App() {
           <Route path="/resume" element={<ResumeMaker />} />
           <Route path="/resume/templates" element={<ResumeTemplates />} />
           <Route
-            path="/resume/templates/enter-details"
+            path="/resume/enter-details"
             element={<EnterDetails />}
           />
           <Route
-            path="/resume/templates/enter-details/download"
+            path="/resume/download"
             element={<DownloadResume />}
           />
 

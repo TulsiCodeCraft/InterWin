@@ -54,7 +54,7 @@ const ResumeMaker = () => {
     const navigate = useNavigate();
   const handleCreateResume = () => {
     // Use a relative path to prevent duplication of the base path
-    navigate('templates/enter-details');
+    navigate('/resume/templates');
   };
 
     return (

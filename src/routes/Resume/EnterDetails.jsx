@@ -69,7 +69,7 @@ const EnterDetails = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        navigate('/download-resume', { state: { formData, templateId } });
+        navigate('/resume/download', { state: { formData, templateId } });
     };
 
     return (

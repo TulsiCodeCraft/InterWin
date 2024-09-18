@@ -31,7 +31,7 @@ const ResumeTemplates = () => {
 
     const handleTemplateSelection = (templateId) => {
         setSelectedTemplate(templateId);
-        navigate('/enter-details', { state: { templateId } });
+        navigate('/resume/enter-details', { state: { templateId } });
     };
 
     return (
