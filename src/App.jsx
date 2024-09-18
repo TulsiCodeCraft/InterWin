@@ -1,0 +1,103 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Interview from "./routes/interview_prep/Interview";
+import Position from "./routes/interview_prep/Position";
+import Company from "./routes/interview_prep/Company";
+import PositionDetails from "./routes/interview_prep/PositionDetails";
+import MockInterview from "./routes/interview_prep/MockInterview";
+import LandingPage from "./routes/Landing_Page/LandingPage";
+import LoginScreen from "./routes/mainLogin/Login";
+import RegistrationScreen from "./routes/mainRegister/Register";
+// import OTPVerificationScreen from "./routes/otp-password/password/OTP";
+import ForgotPasswordScreen from "./routes/otp-password/ForgotPassword";
+import ResetPasswordScreen from "./routes/otp-password/ResetPassword";
+import ResumeMaker from "./routes/Resume/ResumeMaker";
+import ResumeTemplates from "./routes/Resume/ResumeTemplates";
+import EnterDetails from "./routes/Resume/EnterDetails";
+import DownloadResume from "./routes/Resume/DownloadResume";
+import JobListingPage from "./routes/navbar_components/Job-Listing/JobListingPage";
+import InternshipListingPage from "./routes/navbar_components/Internships-Listing/InternshipListingPage";
+import ServicesPage from "./routes/navbar_components/Services/ServicesPage";
+import CompaniesPage from "./routes/navbar_components/Companies/CompaniesPage";
+import Layout from "./routes/meeting_schedule/layout";
+import CardDetail from "./routes/meeting_schedule/cardDetails";
+import InstructorLogin from "./routes/instructor/InstructorLogin";
+import RecruitePage from "./routes/recruiter/recruitePage";
+
+import Footer from "./components/Footer"
+function App() {
+  return (
+    <>
+      <Router>
+      <Navbar />
+        <Routes>
+          {/* landing page */}
+          <Route path="/" element={<LandingPage />} />
+
+          {/* job-listing page */}
+          <Route path="/job-listing" element={<JobListingPage />} />
+
+          {/* internships-listing page */}
+          <Route
+            path="/internships-listing"
+            element={<InternshipListingPage />}
+          />
+
+          {/* services page */}
+          <Route path="/services" element={<ServicesPage />} />
+
+          {/* companies page */}
+          <Route path="/companies" element={<CompaniesPage />} />
+
+          {/* login page */}
+          <Route path="/login" element={<LoginScreen />} />
+
+          {/* instructor login page */}
+          <Route path="/InstructorLogin" element={<InstructorLogin />} />
+
+          {/* recruiter login page */}
+          <Route path="/RecruiterLogin" element={<RecruitePage />} />
+
+          {/* register page */}
+          <Route path="/register" element={<RegistrationScreen />} />
+
+
+          <Route path="/reset-password" element={<ResetPasswordScreen />} />
+
+          {/*resume */}
+          <Route path="/resume/maker" element={<ResumeMaker />} />
+          <Route path="/resume/templates" element={<ResumeTemplates />} />
+          <Route
+            path="/resume/templates/enter-details"
+            element={<EnterDetails />}
+          />
+          <Route
+            path="/resume/templates/enter-details/download"
+            element={<DownloadResume />}
+          />
+
+          {/*interview_prep */}
+          <Route path="/interview_prep" element={<Interview />} />
+          <Route path="/interview_prep/position" element={<Position />} />
+          <Route path="/interview_prep/company" element={<Company />} />
+          <Route
+            path="/interview_prep/position/:position"
+            element={<PositionDetails />}
+          />
+          <Route
+            path="/interview_prep/mock-interview/:position"
+            element={<MockInterview />}
+          />
+
+          {/* meeting schedule */}
+
+          <Route path="/meeting_schedule" element={<Layout />} />
+          <Route path="/meeting_schedule/details" element={<CardDetail />} />
+        </Routes>
+        <Footer/>
+      </Router>
+    </>
+  );
+}
+export default App;
