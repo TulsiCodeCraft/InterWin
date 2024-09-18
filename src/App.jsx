@@ -79,17 +79,10 @@ function App() {
 
           {/*interview_prep */}
           <Route path="/interview_prep" element={<Interview />} />
-          <Route path="/interview_prep/position" element={<Position />} />
-          <Route path="/interview_prep/company" element={<Company />} />
-          <Route
-            path="/interview_prep/position/:position"
-            element={<PositionDetails />}
-          />
-          <Route
-            path="/interview_prep/mock-interview/:position"
-            element={<MockInterview />}
-          />
-
+        <Route path="/interview_prep/position" element={<Position />} />
+        <Route path="/interview_prep/company" element={<Company />} />
+        <Route path="/interview_prep/position/:position" element={<PositionDetails />} />
+        <Route path="/interview_prep/mock-interview/:position" element={<MockInterview />} />
           {/* meeting schedule */}
 
           <Route path="/meeting_schedule" element={<Layout />} />

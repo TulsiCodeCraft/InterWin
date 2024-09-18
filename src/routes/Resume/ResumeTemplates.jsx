@@ -70,7 +70,7 @@ const ResumeTemplates = () => {
                                 <h3 className="text-lg font-semibold">{template.name}</h3>
                                 <p className="text-sm text-gray-600">{template.users} users chose this template</p>
                                 {selectedTemplate === template.id && (
-                                    <button className="mt-4 w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
+                                    <button   onClick={() => handleTemplateSelection(template.id)} className="mt-4 w-full px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
                                         Use This Template
                                     </button>
                                 )}

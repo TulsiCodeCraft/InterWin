@@ -10,9 +10,9 @@ export default function Content() {
   const navigate = useNavigate();
 
   const handlePositionClick = (position) => {
-    navigate(`/position`);
-    
+    navigate(`/interview_prep/position/${formatForRoute(position)}`);
   };
+  
 
   const [selectedPosition, setSelectedPosition] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("");
@@ -25,16 +25,17 @@ export default function Content() {
   const handleSearchPosition = () => {
     if (selectedPosition) {
       const formattedPosition = formatForRoute(selectedPosition);
-      navigate(`/position/${formattedPosition}`); // Navigate with formatted position
+      navigate(`/interview_prep/position/${formattedPosition}`);
     }
   };
-
+  
   const handleSearchCompany = () => {
     if (selectedCompany) {
       const formattedCompany = formatForRoute(selectedCompany);
-      navigate(`/company/${formattedCompany}`); // Navigate with formatted company
+      navigate(`/interview_prep/company/${formattedCompany}`);
     }
   };
+  
 
   return (
     <div className="w-full  h-full mx-auto bg-purple-50 pt-10">

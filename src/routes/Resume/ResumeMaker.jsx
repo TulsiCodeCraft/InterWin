@@ -52,10 +52,10 @@ const TemplateCard = ({ template }) => {
 
 const ResumeMaker = () => {
     const navigate = useNavigate();
-  
-    const handleCreateResume = () => {
-      navigate('/resume-templates');
-    };
+  const handleCreateResume = () => {
+    // Use a relative path to prevent duplication of the base path
+    navigate('templates/enter-details');
+  };
 
     return (
         <div className="container mx-auto px-4 py-8">
