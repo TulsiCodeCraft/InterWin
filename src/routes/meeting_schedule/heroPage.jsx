@@ -1,3 +1,6 @@
+import React from 'react'; // Import React
+
+
 export default function HeroPage() {
   return (
     <div

@@ -1,8 +1,18 @@
 import React from 'react';
-import AiResume from '../../assets/images/resume.png'
+import AiResume from '../../assets/images/resume.png';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Resume = () => {
+
+  const navigate = useNavigate();
+
+  const handleStartNowClick = () => {
+    navigate('/resume');
+  };
+
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -16,7 +26,10 @@ const Resume = () => {
             with
             <span className="font-semibold text-blue-500"> Precision</span>
           </p>
-          <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600">
+          <button 
+          onClick={handleStartNowClick}
+
+          className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600">
             Start now &gt;
           </button>
         </div>

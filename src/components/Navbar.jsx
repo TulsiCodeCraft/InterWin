@@ -26,7 +26,11 @@ const Navbar = () => {
     <>
       <nav className="bg-purple-100 shadow-md p-4 px-20 flex justify-between items-center">
         <div className="text-2xl font-extrabold text-left text-purple-600">
+        <Link to="/" >
+
           Interwin
+          </Link>
+
         </div>
 
         <div className="flex space-x-8 text-lg">
@@ -82,11 +86,14 @@ const Navbar = () => {
             </button>
             {loginDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-purple-100 border border-gray-200 shadow-md rounded-lg z-50">
-                <Link to="/login-recruiter" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <Link to="/login" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                  Login as Student 
+                </Link>
+                <Link Link to="/RecruiterLogin" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Login as Recruiter
                 </Link>
-                <Link Link to="/login" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
-                  Login as Student
+                <Link Link to="/InstructorLogin" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                  Login as Instructor
                 </Link>
               </div>
             )}
@@ -115,7 +122,7 @@ const Navbar = () => {
                 <a href="#settings" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   My Application
                 </a>
-                <a href="#logout" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <a href="/logout" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Logout
                 </a>
               </div>

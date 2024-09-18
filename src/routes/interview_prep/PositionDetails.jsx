@@ -42,7 +42,7 @@ const PositionDetails = () => {
               <p>{item.questions.length} Questions available</p>
               {/* Add a link to start the mock interview */}
               <Link 
-                to={`/mock-interview/${position}`} 
+                to={`interview_prep/mock-interview/${position}`} 
                 className="mt-2 inline-block px-4 py-2 bg-purple-500 text-white rounded"
               >
                 Start Mock Interview

@@ -36,7 +36,7 @@ const MockInterview = () => {
 
   const endInterview = () => {
     setInterviewOver(true);
-    navigate(`/position/${position}`); 
+    navigate(`interview_prep/position/${position}`); 
   };
 
   if (!interview) {

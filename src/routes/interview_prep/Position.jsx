@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mockInterviewData, practiceData } from '../../lib/dummyData';
 
@@ -25,7 +26,7 @@ const Layout = () => {
 
   const handleCardClick = (position) => {
     const formattedPosition = position.toLowerCase().split(' ').join('-');
-    navigate(`/position/${formattedPosition}`);
+    navigate(`interview_prep/position/${formattedPosition}`);
   };
 
   const getImageForPosition = (position) => {

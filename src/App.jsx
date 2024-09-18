@@ -66,7 +66,7 @@ function App() {
           <Route path="/reset-password" element={<ResetPasswordScreen />} />
 
           {/*resume */}
-          <Route path="/resume/maker" element={<ResumeMaker />} />
+          <Route path="/resume" element={<ResumeMaker />} />
           <Route path="/resume/templates" element={<ResumeTemplates />} />
           <Route
             path="/resume/templates/enter-details"
