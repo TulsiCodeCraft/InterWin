@@ -27,7 +27,7 @@ const WhatWeOfferSection = () => {
     { name: 'Chatbot', route: '/chatbot' },
     { name: 'Video call with Experts', route: '/meeting_schedule' },
     { name: 'Interview preparatory', route: '/interview_prep' },
-    { name: 'Feedback system', route: '/feedback-system' },
+    { name: 'Feedback system', route: '/feedback_system' },
     { name: 'Skill evaluation', route: '/skill-evaluation' },
     { name: 'Resume generator', route: '/resume' },
   ];
