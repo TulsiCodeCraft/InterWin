@@ -116,10 +116,10 @@ const Navbar = () => {
             </button>
             {avatarDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-purple-100 border border-gray-200 shadow-md rounded-lg z-50">
-                <a href="#profile" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <a href="/profile" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Profile
                 </a>
-                <a href="#settings" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <a href="/application" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   My Application
                 </a>
                 <a href="/logout" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">

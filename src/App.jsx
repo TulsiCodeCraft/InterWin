@@ -26,6 +26,10 @@ import InstructorLogin from "./routes/instructor/InstructorLogin";
 import RecruitePage from "./routes/recruiter/recruitePage";
 
 import Footer from "./components/Footer"
+import Feedback from "./routes/feedback/feedback";
+import Profile from "./routes/profile/profile";
+import EditProfile from "./routes/profile/editProfile";
+import JobHistory from "./routes/application/application";
 function App() {
   return (
     <>
@@ -64,6 +68,26 @@ function App() {
 
 
           <Route path="/reset-password" element={<ResetPasswordScreen />} />
+
+
+          
+          {/*profile */}
+          <Route path="/profile" element={<Profile />} />
+
+
+          {/*edit_profile */}
+          <Route path="/edit-profile" element={<EditProfile />} />
+
+          
+
+
+          {/*feedback_system */}
+          <Route path="/feedback_system" element={<Feedback />} />
+
+          
+          {/*job_history */}
+          <Route path="/application" element={<JobHistory />} />
+
 
           {/*resume */}
           <Route path="/resume" element={<ResumeMaker />} />
