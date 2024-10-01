@@ -30,23 +30,27 @@ import Feedback from "./routes/feedback/feedback";
 import Profile from "./routes/profile/profile";
 import EditProfile from "./routes/profile/editProfile";
 import JobHistory from "./routes/application/application";
+import JobDetailsPage from "./routes/navbar_components/Job-Listing/JobDetailsPage";
+import ScrollToTop from "./components/ScrollToTop";
+import InternshipDetailsPage from "./routes/navbar_components/Internships-Listing/InternshipDetailsPage";
 function App() {
   return (
     <>
       <Router>
       <Navbar />
+      <ScrollToTop/>
         <Routes>
           {/* landing page */}
           <Route path="/" element={<LandingPage />} />
 
           {/* job-listing page */}
-          <Route path="/job-listing" element={<JobListingPage />} />
+          <Route path="/job-listing" element={<JobListingPage/>} />
+          <Route path="/job/:id" element={<JobDetailsPage />} />
+          
 
           {/* internships-listing page */}
-          <Route
-            path="/internships-listing"
-            element={<InternshipListingPage />}
-          />
+          <Route path="/internships-listing" element={<InternshipListingPage />}/>
+          <Route path="/internship/:id" element={<InternshipDetailsPage />}/>
 
           {/* services page */}
           <Route path="/services" element={<ServicesPage />} />
@@ -93,7 +97,7 @@ function App() {
           <Route path="/resume" element={<ResumeMaker />} />
           <Route path="/resume/templates" element={<ResumeTemplates />} />
           <Route
-            path="/r=esume/enter-details"
+            path="/resume/enter-details"
             element={<EnterDetails />}
           />
           <Route
