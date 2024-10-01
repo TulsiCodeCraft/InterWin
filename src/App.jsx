@@ -110,7 +110,7 @@ function App() {
           {/* meeting schedule */}
 
           <Route path="/meeting_schedule" element={<Layout />} />
-          <Route path="/meeting_schedule/details" element={<CardDetail />} />
+          <Route path="/meeting_schedule/:id" element={<CardDetail />} />
         </Routes>
         <Footer/>
       </Router>
