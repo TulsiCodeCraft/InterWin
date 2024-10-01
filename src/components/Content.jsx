@@ -37,14 +37,14 @@ export default function Content() {
   const handleSearchPosition = () => {
     if (selectedPosition) {
       const formattedPosition = formatForRoute(selectedPosition);
-      navigate(`/position/${formattedPosition}`); 
+      navigate(`/interview_prep/position/${formattedPosition}`); 
     }
   };
 
   const handleSearchCompany = () => {
     if (selectedCompany) {
       const formattedCompany = formatForRoute(selectedCompany);
-      navigate(`/company/${formattedCompany}`);
+      navigate(`/interview_prep/company/${formattedCompany}`);
     }
   };
 

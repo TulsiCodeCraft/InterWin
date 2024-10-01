@@ -6,6 +6,7 @@ import { mockInterviewData, practiceData } from '../../lib/dummyData';
 const Layout = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredPositions, setFilteredPositions] = useState([...new Set([...mockInterviewData, ...practiceData].map(item => item.position))]);
+  const [selectedFilter, setSelectedFilter] = useState('All');
 
   const navigate = useNavigate();
 
@@ -34,29 +35,65 @@ const Layout = () => {
     return positionData ? positionData.image : 'https://via.placeholder.com/300x200';
   };
 
+  const handleFilterChange = (filter) => {
+    setSelectedFilter(filter);
+
+    const filteredMock = mockInterviewData.filter(item => 
+      filter === 'All' || item.type === filter
+    );
+    const filteredPractice = practiceData.filter(item =>
+      filter === 'All' || item.type === filter
+    );
+
+    const combinedPositions = [...new Set([...filteredMock, ...filteredPractice].map(item => item.position))];
+    setFilteredPositions(combinedPositions);
+  };
+
   return (
     <div className="flex">
       <div className="w-1/4 h-screen bg-white p-4">
         <h2 className="text-xl font-bold mb-4">Filters & Preferences</h2>
+
+        {/* Search Bar inside Filter */}
+        <input
+          type="text"
+          className="border border-gray-300 p-2 rounded w-full mb-4"
+          placeholder="Search for a position (e.g., Frontend Developer)"
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+
+        {/* Filters for Position Types */}
         <ul>
-          <li>Filter 1</li>
-          <li>Filter 2</li>
-          <li>Filter 3</li>
+          <li 
+            className={`cursor-pointer mb-2 ${selectedFilter === 'All' ? 'font-bold' : ''}`}
+            onClick={() => handleFilterChange('All')}
+          >
+            All
+          </li>
+          <li 
+            className={`cursor-pointer mb-2 ${selectedFilter === 'Technical' ? 'font-bold' : ''}`}
+            onClick={() => handleFilterChange('Technical')}
+          >
+            Technical
+          </li>
+          <li 
+            className={`cursor-pointer mb-2 ${selectedFilter === 'Business' ? 'font-bold' : ''}`}
+            onClick={() => handleFilterChange('Business')}
+          >
+            Business
+          </li>
+          <li 
+            className={`cursor-pointer mb-2 ${selectedFilter === 'Writer' ? 'font-bold' : ''}`}
+            onClick={() => handleFilterChange('Writer')}
+          >
+            Writer
+          </li>
         </ul>
       </div>
 
       <div className="w-3/4 bg-purple-50 p-4">
-        <h2 className="text-xl font-bold mb-4">Search by Position</h2>
-
-        <div className="flex mb-6">
-          <input
-            type="text"
-            className="border border-gray-300 p-2 rounded w-full"
-            placeholder="Search for a position (e.g., Frontend Developer)"
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-        </div>
+        <h1 className="text-3xl font-bold mb-4 text-purple-500">Positions</h1>
 
         {filteredPositions.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -89,4 +126,3 @@ const Layout = () => {
 };
 
 export default Layout;
-  
