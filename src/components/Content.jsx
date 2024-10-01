@@ -10,14 +10,26 @@ export default function Content() {
   const navigate = useNavigate();
 
   const handlePositionClick = (position) => {
-    navigate(`/interview_prep/position/${formatForRoute(position)}`);
+    navigate(`/position`);
+    
   };
-  
 
   const [selectedPosition, setSelectedPosition] = useState("");
   const [selectedCompany, setSelectedCompany] = useState("");
+  const [isPositionSelected, setIsPositionSelected] = useState(true);
+  
+  const handleToggleChange = () => {
+    setIsPositionSelected(!isPositionSelected); // Toggle the state
+  };
 
-  // Function to format string to lowercase and replace spaces with dashes
+  const handleSearch = () => {
+    if (isPositionSelected) {
+      navigate(`/interview_prep/position`); 
+    } else {
+      navigate(`/interview_prep/company`);
+    }
+  };
+
   const formatForRoute = (value) => {
     return value.toLowerCase().split(' ').join('-');
   };
@@ -25,37 +37,53 @@ export default function Content() {
   const handleSearchPosition = () => {
     if (selectedPosition) {
       const formattedPosition = formatForRoute(selectedPosition);
-      navigate(`/interview_prep/position/${formattedPosition}`);
+      navigate(`/interview_prep/position/${formattedPosition}`); 
     }
   };
-  
+
   const handleSearchCompany = () => {
     if (selectedCompany) {
       const formattedCompany = formatForRoute(selectedCompany);
       navigate(`/interview_prep/company/${formattedCompany}`);
     }
   };
-  
 
   return (
-    <div className="w-full  h-full mx-auto bg-purple-50 pt-10">
-      <div className="grid grid-cols-2  items-center ">
-        <div className=" w-full h-full mx-auto p-10 ">
+    <div className="w-full h-full mx-auto bg-purple-50 pt-10">
+      <div className="grid grid-cols-2 items-center">
+        <div className="w-full h-full mx-auto p-10">
           <Slider />
         </div>
-        <div className="mx-auto  w-z h-[300px]">
+        <div className="mx-auto w-z h-[300px]">
           <h1 className="text-3xl font-extrabold">
-            {" "}
-            <span className="text-purple-500">Interview Mastery </span>Through
-            Unlimited Practices
+            <span className="text-purple-500">
+               Interview Mastery
+            </span>{" "}
+            Through Unlimited Practices
           </h1>
-          <p className=" mt-5 text-sm">
-            Practice for any job position to boost your confidence and skills
-            with unlimited, on-demand interview simulations.
+          <p className="mt-5 text-sm">
+            Practice for any {isPositionSelected ? "job position" : "company"} to boost your confidence and skills with unlimited, on-demand interview simulations.
           </p>
+
+        
+          <div className="flex items-center mt-5">
+            <span className="font-semibold text-gray-600">Position</span>
+            <label className="relative inline-flex items-center mx-2 cursor-pointer">
+              <input
+                type="checkbox"
+                className="sr-only peer"
+                checked={!isPositionSelected}
+                onChange={handleToggleChange}
+              />
+              <div className="w-11 h-6 bg-purple-500 rounded-full peer-focus:ring-2 peer-focus:ring-purple-300 relative transition duration-300">
+                <span className={`absolute top-0.5 left-[2px] w-5 h-5 rounded-full bg-white transition-all ${!isPositionSelected ? "translate-x-5" : ""}`}></span>
+              </div>
+            </label>
+            <span className="font-semibold text-gray-600">Company</span>
+          </div>
+
           <button
-            href="#select"
-            onClick={handlePositionClick}
+            onClick={handleSearch}
             className="bg-purple-100 p-2 mt-5 rounded text-xl font-semibold shadow-md hover:bg-purple-200"
           >
             Get Started
@@ -70,7 +98,7 @@ export default function Content() {
         id="select"
         className="w-full h-full flex flex-wrap justify-center items-center gap-6 p-10 bg-purple-50"
       >
-        {/* Card for Position */}
+      
         <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
           <img
             src={interviewImagePosition}
@@ -112,7 +140,6 @@ export default function Content() {
           </button>
         </div>
 
-        {/* Card for Company */}
         <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
           <img
             src={interviewImageCompany}

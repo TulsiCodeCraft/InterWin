@@ -30,15 +30,23 @@ import Feedback from "./routes/feedback/feedback";
 import Profile from "./routes/profile/profile";
 import EditProfile from "./routes/profile/editProfile";
 import JobHistory from "./routes/application/application";
+
 import JobDetailsPage from "./routes/navbar_components/Job-Listing/JobDetailsPage";
 import ScrollToTop from "./components/ScrollToTop";
 import InternshipDetailsPage from "./routes/navbar_components/Internships-Listing/InternshipDetailsPage";
+
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
   return (
     <>
       <Router>
       <Navbar />
+
       <ScrollToTop/>
+
+      <ScrollToTop />
+
         <Routes>
           {/* landing page */}
           <Route path="/" element={<LandingPage />} />
@@ -110,11 +118,11 @@ function App() {
         <Route path="/interview_prep/position" element={<Position />} />
         <Route path="/interview_prep/company" element={<Company />} />
         <Route path="/interview_prep/position/:position" element={<PositionDetails />} />
-        <Route path="/interview_prep/mock-interview/:position" element={<MockInterview />} />
+        <Route path="/interview_prep/mock-interview/:position/:level" element={<MockInterview />} />
           {/* meeting schedule */}
 
           <Route path="/meeting_schedule" element={<Layout />} />
-          <Route path="/meeting_schedule/details" element={<CardDetail />} />
+          <Route path="/meeting_schedule/:id" element={<CardDetail />} />
         </Routes>
         <Footer/>
       </Router>
