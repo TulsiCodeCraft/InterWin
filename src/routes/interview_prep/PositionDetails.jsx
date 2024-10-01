@@ -12,7 +12,7 @@ const PositionDetails = () => {
   const mockInterviews = mockInterviewData.filter(item => item.position.toLowerCase() === formattedPosition);
 
   return (
-    <div className="p-4 bg-purple-50 h-screen w-full">
+    <div className="p-4 bg-purple-50 h-fulll w-full">
       <h2 className="text-2xl font-bold mb-4">
         <span className='text-purple-500'>Position:</span> {position.replace('-', ' ')}
       </h2>
@@ -35,22 +35,50 @@ const PositionDetails = () => {
 
       {/* Display Mock Interviews */}
       {activeSection === 'mockInterview' && mockInterviews.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {mockInterviews.map((item, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <h4 className="text-lg font-semibold mb-2">Mock Interview: {item.position}</h4>
-              <p>{item.questions.length} Questions available</p>
-              {/* Add a link to start the mock interview */}
+    <div className="w-full h-screen">
+      {mockInterviews.map((item, index) => (
+        <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+          <h4 className="text-lg font-semibold mb-2">Mock Interview: {item.position}</h4>
+          <div className="grid grid-cols-3 gap-4">
+            {/* Easy Questions Card */}
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
+              <h5 className="text-md font-bold mb-2 text-green-500">Easy Questions</h5>
+              <p>{item.questions.easy.length} Questions available</p>
               <Link 
-                to={`/mock-interview/${position}`} 
+                to={`/interview_prep/mock-interview/${item.position}/easy`} 
                 className="mt-2 inline-block px-4 py-2 bg-purple-500 text-white rounded"
               >
-                Start Mock Interview
+                Start 
               </Link>
             </div>
-          ))}
+            {/* Medium Questions Card */}
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
+              <h5 className="text-md font-bold mb-2 text-yellow-500">Medium Questions</h5>
+              <p>{item.questions.medium.length} Questions available</p>
+              <Link 
+                to={`/interview_prep/mock-interview/${item.position}/medium`} 
+                className="mt-2 inline-block px-4 py-2 bg-purple-500 text-white rounded"
+              >
+                Start 
+              </Link>
+            </div>
+            {/* Professional (Hard) Questions Card */}
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
+              <h5 className="text-md font-bold mb-2   text-red-500">Professional Questions</h5>
+              <p>{item.questions.professional.length} Questions available</p>
+              <Link 
+                to={`/interview_prep/mock-interview/${item.position}/professional`} 
+                className="mt-2 inline-block px-4 py-2 bg-purple-500 text-white rounded"
+              >
+                Start 
+              </Link>
+            </div>
+          </div>
         </div>
-      )}
+      ))}
+    </div>
+  )}
+
 
       {/* Display Practice Data */}
       {activeSection === 'practice' && (

@@ -26,7 +26,7 @@ const Layout = () => {
 
   const handleCardClick = (position) => {
     const formattedPosition = position.toLowerCase().split(' ').join('-');
-    navigate(`/position/${formattedPosition}`);
+    navigate(`/interview_prep/position/${formattedPosition}`);
   };
 
   const getImageForPosition = (position) => {
