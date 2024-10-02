@@ -40,6 +40,7 @@ import InternshipForm from "./routes/navbar_components/Internships-Listing/Inter
 
 
 
+
 function App() {
   return (
     <>
@@ -55,7 +56,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
 
           {/* job-listing page */}
-          <Route path="/job-listing" element={<JobListingPage/>} />
+          <Route path="/job-listing" element={<JobListingPage />} />
           <Route path="/job/:id" element={<JobDetailsPage />} />
           <Route path="/apply/:id" element={<JobApplicationForm />} />
           
