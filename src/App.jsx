@@ -34,8 +34,8 @@ import JobHistory from "./routes/application/application";
 import JobDetailsPage from "./routes/navbar_components/Job-Listing/JobDetailsPage";
 import ScrollToTop from "./components/ScrollToTop";
 import InternshipDetailsPage from "./routes/navbar_components/Internships-Listing/InternshipDetailsPage";
+import CompanyDetails from "./routes/navbar_components/Companies/CompanyDetails";
 
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -65,6 +65,7 @@ function App() {
 
           {/* companies page */}
           <Route path="/companies" element={<CompaniesPage />} />
+          <Route path="/companies/:companyId" element={<CompanyDetails />} />
 
           {/* login page */}
           <Route path="/login" element={<LoginScreen />} />

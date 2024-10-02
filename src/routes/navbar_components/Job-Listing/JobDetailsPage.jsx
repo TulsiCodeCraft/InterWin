@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, MapPin, Clock, Users } from 'lucide-react';
 
 
-import { jobListings } from './JobListingPage';
+import { jobListings } from '../../../lib/dummyData';
 
 const JobDetailsPage = () => {
   const { id } = useParams();

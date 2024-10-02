@@ -551,3 +551,505 @@ export const practiceData = [
 ];
 
 
+export const jobListings = [
+
+  {
+    id: 1,
+    title: "Backend Developer",
+    companyId: "101",
+    company: "TechInnovate Solutions",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyR-eY6XruEswHpvpwCyz_GFbSd8odEyCXng&s",
+     rating: "2.5",
+    reviews: 6,
+    experience: "1 - 4 years",
+    salary: "Not Disclosed",
+    location: "Kolkata, Mumbai, New Delhi, Hyderabad, Pune, Chennai, Bengaluru",
+    duration: "Full Time",
+    postedDate: "7 days ago",
+    openings: 1,
+    applicants: 210,
+    matchScores: ["Early Applicant", "Keyskills", "Location", "Work Experience"],
+    description: [
+      "As a Unqork No-Code Tool Developer, you will be responsible for designing, developing, and implementing applications using the Unqork platform.",
+      "You will collaborate with cross-functional teams to understand business requirements and translate them into efficient and scalable solutions.",
+      "This role offers an exciting opportunity to work with the latest technologies and contribute to the success of our clients' digital transformation journeys."
+    ],
+    responsibilities: [
+      "Design, develop, and implement applications using the Unqork platform",
+      "Collaborate with cross-functional teams to gather and analyze business requirements",
+      "Translate business requirements into efficient and scalable no-code solutions",
+      "Ensure the quality and performance of developed applications",
+      "Participate in code reviews and provide constructive feedback",
+      "Stay updated with the latest features and best practices of the Unqork platform"
+    ],
+    role: "Software Development - Other",
+    industryType: "Software Product",
+    department: "Engineering - Software & QA",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Software Development",
+    education: {
+      ug: "Any Graduate",
+      pg: "Any Postgraduate"
+    },
+    keySkills: [
+      "Web services",
+      "development testing",
+      "Database design",
+      "Web development",
+      "Javascript",
+      "Agile",
+      "Software development life cycle",
+      "HTML",
+      "Information technology"
+    ],
+    tags: ["No-Code", "Unqork", "Web Development", "Software Engineering"],
+    socialLinks: [
+      { icon: "Facebook", url: "#" },
+      { icon: "Twitter", url: "#" },
+      { icon: "LinkedIn", url: "#" }
+    ],
+    aboutCompany: "Surge Technology Solutions is a one stop BPM solution provider offering digitally driven Business Process Management solutions for businesses across various industries."
+  },
+  {
+    id: 2,
+    title: "Frontend Developer",
+    companyId: "101",
+    company: "TechInnovate Solutions",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyR-eY6XruEswHpvpwCyz_GFbSd8odEyCXng&s",
+    rating: "4.2",
+    reviews: 128,
+    experience: "2 - 5 years",
+    salary: "₹6,00,000 - ₹12,00,000 PA",
+    location: "Bangalore, Hyderabad",
+    duration: "Full Time",
+    postedDate: "3 days ago",
+    openings: 3,
+    applicants: 75,
+    matchScores: ["Keyskills", "Location", "Work Experience"],
+    description: [
+      "We are seeking a talented Frontend Developer to join our dynamic team.",
+      "You will be responsible for implementing visual elements that users see and interact with in a web application.",
+      "Collaborate with back-end developers and web designers to improve usability."
+    ],
+    responsibilities: [
+      "Develop new user-facing features",
+      "Build reusable code and libraries for future use",
+      "Ensure the technical feasibility of UI/UX designs",
+      "Optimize application for maximum speed and scalability",
+      "Assure that all user input is validated before submitting to back-end"
+    ],
+    role: "Frontend Developer",
+    industryType: "IT Services & Consulting",
+    department: "Engineering",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Software Development",
+    education: {
+      ug: "B.Tech/B.E. in Computer Science, IT or related field",
+      pg: "M.Tech/MCA (Preferred)"
+    },
+    keySkills: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Vue.js",
+      "Webpack",
+      "Responsive Design"
+    ],
+    tags: ["Frontend", "JavaScript", "React", "Web Development"],
+    aboutCompany: "TechInnovate Solutions is a leading software development company specializing in creating cutting-edge web and mobile applications."
+  },
+  {
+    id: 7,
+    title: "Backend Developer",    
+    companyId: "101",
+    company: "TechInnovate Solutions",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyR-eY6XruEswHpvpwCyz_GFbSd8odEyCXng&s",
+    rating: "4.2",
+    reviews: 128,
+    experience: "2 - 5 years",
+    salary: "₹6,00,000 - ₹12,00,000 PA",
+    location: "Bangalore, Hyderabad",
+    duration: "Full Time",
+    postedDate: "3 days ago",
+    openings: 3,
+    applicants: 75,
+    matchScores: ["Keyskills", "Location", "Work Experience"],
+    description: [
+      "We are seeking a talented Frontend Developer to join our dynamic team.",
+      "You will be responsible for implementing visual elements that users see and interact with in a web application.",
+      "Collaborate with back-end developers and web designers to improve usability."
+    ],
+    responsibilities: [
+      "Develop new user-facing features",
+      "Build reusable code and libraries for future use",
+      "Ensure the technical feasibility of UI/UX designs",
+      "Optimize application for maximum speed and scalability",
+      "Assure that all user input is validated before submitting to back-end"
+    ],
+    role: "Backend Developer",
+    industryType: "IT Services & Consulting",
+    department: "Engineering",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Software Development",
+    education: {
+      ug: "B.Tech/B.E. in Computer Science, IT or related field",
+      pg: "M.Tech/MCA (Preferred)"
+    },
+    keySkills: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Vue.js",
+      "Webpack",
+      "Responsive Design"
+    ],
+    tags: ["Frontend", "JavaScript", "React", "Web Development"],
+    aboutCompany: "TechInnovate Solutions is a leading software development company specializing in creating cutting-edge web and mobile applications."
+  },
+  {
+    id: 3,
+    title: "Data Scientist",
+    companyId: "102",
+    company: "DataMind Analytics",
+    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFrEHaJtr-L7g/company-logo_200_200/company-logo_200_200/0/1676687822078?e=2147483647&v=beta&t=EybQieXtE5sYqMf9QV6r-YuJP8NyV4nNkM01_xC2G20",
+    rating: "4.0",
+    reviews: 87,
+    experience: "3 - 7 years",
+    salary: "₹15,00,000 - ₹25,00,000 PA",
+    location: "Mumbai, Pune",
+    duration: "Full Time",
+    postedDate: "5 days ago",
+    openings: 2,
+    applicants: 150,
+    matchScores: ["Keyskills", "Work Experience"],
+    description: [
+      "We are looking for a Data Scientist to join our growing analytics team.",
+      "You will work on complex data sets to solve business problems and drive decision-making.",
+      "Collaborate with cross-functional teams to implement machine learning models."
+    ],
+    responsibilities: [
+      "Develop and implement statistical and machine learning models",
+      "Process, cleanse, and verify the integrity of data used for analysis",
+      "Conduct data mining using state-of-the-art methods",
+      "Present findings to stakeholders and make recommendations",
+      "Create automated anomaly detection systems and constant tracking of its performance"
+    ],
+    role: "Data Scientist",
+    industryType: "Analytics / KPO / Research",
+    department: "Analytics",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Data Science & Analytics",
+    education: {
+      ug: "B.Tech/B.E. in Computer Science, Statistics or related field",
+      pg: "M.Tech/MS in Data Science, Machine Learning or related field"
+    },
+    keySkills: [
+      "Python",
+      "R",
+      "SQL",
+      "Machine Learning",
+      "Deep Learning",
+      "Statistics",
+      "Data Visualization"
+    ],
+    tags: ["Data Science", "Machine Learning", "Analytics", "Big Data"],
+    aboutCompany: "DataMind Analytics is a data-driven company that provides advanced analytics solutions to businesses across various industries."
+  },
+  {
+    id: 4,
+    title: "DevOps Engineer",
+    companyId: "102",
+    company: "DataMind Analytics",
+    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFrEHaJtr-L7g/company-logo_200_200/company-logo_200_200/0/1676687822078?e=2147483647&v=beta&t=EybQieXtE5sYqMf9QV6r-YuJP8NyV4nNkM01_xC2G20",
+    rating: "3.8",
+    reviews: 62,
+    experience: "4 - 8 years",
+    salary: "₹18,00,000 - ₹35,00,000 PA",
+    location: "Gurgaon, Noida",
+    duration: "Full Time",
+    postedDate: "2 days ago",
+    openings: 1,
+    applicants: 45,
+    matchScores: ["Keyskills", "Location"],
+    description: [
+      "We are seeking an experienced DevOps Engineer to join our infrastructure team.",
+      "You will be responsible for maintaining and scaling our cloud-based systems.",
+      "Work on improving our CI/CD pipelines and automate deployment processes."
+    ],
+    responsibilities: [
+      "Design and implement CI/CD pipelines",
+      "Manage and optimize cloud infrastructure on AWS and GCP",
+      "Implement security best practices and ensure compliance",
+      "Troubleshoot and resolve infrastructure issues",
+      "Collaborate with development teams to improve deployment processes"
+    ],
+    role: "DevOps Engineer",
+    industryType: "IT Services & Consulting",
+    department: "Infrastructure & Cloud Operations",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "DevOps & Cloud Infrastructure",
+    education: {
+      ug: "B.Tech/B.E. in Computer Science or related field",
+      pg: "M.Tech (Preferred)"
+    },
+    keySkills: [
+      "AWS",
+      "GCP",
+      "Docker",
+      "Kubernetes",
+      "Jenkins",
+      "Terraform",
+      "Linux",
+      "Scripting (Python/Bash)"
+    ],
+    tags: ["DevOps", "Cloud", "CI/CD", "Infrastructure"],
+    aboutCompany: "CloudTech Systems is a cloud solutions provider specializing in helping businesses migrate and optimize their infrastructure on cloud platforms."
+  },
+  {
+    id: 5,
+    title: "UI/UX Designer",
+    companyId: "103",
+    company: "CreativePixel Design Studio",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEyUyPc4AUEEKcfqg6CRf-EF4iafOm6kaRhw&s",
+    rating: "4.5",
+    reviews: 39,
+    experience: "2 - 6 years",
+    salary: "₹8,00,000 - ₹18,00,000 PA",
+    location: "Bangalore, Remote",
+    duration: "Full Time",
+    postedDate: "1 week ago",
+    openings: 2,
+    applicants: 120,
+    matchScores: ["Keyskills", "Work Experience"],
+    description: [
+      "We're looking for a talented UI/UX Designer to create amazing user experiences.",
+      "You will work on designing both web and mobile applications.",
+      "Collaborate with product managers and developers to create intuitive, user-friendly designs."
+    ],
+    responsibilities: [
+      "Create user-centered designs by understanding business requirements and user feedback",
+      "Develop UI mockups and prototypes that clearly illustrate how sites function and look",
+      "Conduct user research and evaluate user feedback",
+      "Establish and promote design guidelines, best practices and standards",
+      "Create original graphic designs (e.g. images, sketches and tables)"
+    ],
+    role: "UI/UX Designer",
+    industryType: "Design & Creative",
+    department: "Design",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Design & Creative",
+    education: {
+      ug: "Bachelor's degree in Design, Fine Arts or related field",
+      pg: "Master's in Interaction Design or HCI (Preferred)"
+    },
+    keySkills: [
+      "Adobe XD",
+      "Figma",
+      "Sketch",
+      "InVision",
+      "Prototyping",
+      "Wireframing",
+      "User Research"
+    ],
+    tags: ["UI Design", "UX Design", "Interaction Design", "Prototyping"],
+    aboutCompany: "CreativePixel Design Studio is a boutique design agency known for creating beautiful and functional digital experiences for startups and enterprises alike."
+  },
+  {
+    id: 6,
+    title: "Product Manager",
+    companyId: "103",
+    company: "CreativePixel Design Studio",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEyUyPc4AUEEKcfqg6CRf-EF4iafOm6kaRhw&s",
+    rating: "4.3",
+    reviews: 51,
+    experience: "5 - 10 years",
+    salary: "₹25,00,000 - ₹45,00,000 PA",
+    location: "Bangalore, Mumbai, Delhi",
+    duration: "Full Time",
+    postedDate: "4 days ago",
+    openings: 1,
+    applicants: 85,
+    matchScores: ["Keyskills", "Work Experience", "Location"],
+    description: [
+      "We are seeking an experienced Product Manager to lead the development of our flagship SaaS product.",
+      "You will work closely with engineering, design, and marketing teams to drive product strategy and execution.",
+      "This role requires a blend of business acumen, technical knowledge, and strong leadership skills."
+    ],
+    responsibilities: [
+      "Define and execute product strategy aligned with company goals",
+      "Gather and analyze feedback from customers, stakeholders and potential clients",
+      "Work closely with engineering teams to deliver with quick time-to-market and optimal resources",
+      "Develop product pricing and positioning strategies",
+      "Act as a product evangelist to build awareness and understanding"
+    ],
+    role: "Product Manager",
+    industryType: "Software Product",
+    department: "Product Management",
+    employmentType: "Full Time, Permanent",
+    roleCategory: "Product Management",
+    education: {
+      ug: "B.Tech/B.E. or equivalent",
+      pg: "MBA (Preferred)"
+    },
+    keySkills: [
+      "Product Strategy",
+      "Agile Methodologies",
+      "Data Analysis",
+      "User Story Mapping",
+      "Roadmapping",
+      "A/B Testing",
+      "Product Analytics"
+    ],
+    tags: ["Product Management", "SaaS", "B2B", "Agile"],
+    aboutCompany: "InnovateTech Solutions is a fast-growing SaaS company that provides cutting-edge business management solutions to enterprises worldwide."
+  }
+];
+
+export const internshipListings = [
+  {
+      id: 1,
+      title: 'Marketing Intern',
+      company: "TechInnovate Solutions",
+      companyId:"101",
+      location: 'Bangalore',
+      duration: '3 months',
+      stipend: '₹15,000 /month',
+      startDate: 'Immediately',
+      logo: 'https://www.capboard.io/cms/assets/investor_listing/4445.png',
+      tags: ['Marketing', 'Social Media'],
+      skills: ['Content Creation', 'Social Media Management', 'Analytics'],
+      responsibilities: [
+          'Create engaging content for social media platforms',
+          'Analyze marketing campaign performance',
+          'Assist in developing marketing strategies'
+      ],
+      description: [
+          'Exciting opportunity to work with a fast-growing tech startup',
+          'Gain hands-on experience in digital marketing',
+          'Work closely with experienced marketing professionals'
+      ],
+      aboutCompany: 'TechStart is an innovative startup focused on creating cutting-edge mobile applications.'
+  },
+  {
+      id: 2,
+      title: 'Web Development Intern',
+      company: "TechInnovate Solutions",
+      companyId:"101",
+      location: 'Remote',
+      duration: '6 months',
+      stipend: '₹20,000 /month',
+      startDate: '1st Aug 2024',
+      logo: 'https://www.capboard.io/cms/assets/investor_listing/4445.png',
+      tags: ['React', 'Node.js'],
+      skills: ['JavaScript', 'React', 'Node.js', 'Git'],
+      responsibilities: [
+          'Develop and maintain web applications',
+          'Collaborate with the team on new features',
+          'Participate in code reviews and testing'
+      ],
+      description: [
+          'Join a team of passionate developers working on exciting projects',
+          'Opportunity to work on both frontend and backend technologies',
+          'Flexible remote work environment'
+      ],
+      aboutCompany: 'CodeCraft is a leading software development company specializing in web and mobile applications.'
+  },
+  {
+      id: 3,
+      title: 'Data Science Intern',
+      companyId: "102",
+      company: "DataMind Analytics",
+            location: 'Mumbai',
+      duration: '4 months',
+      stipend: '₹25,000 /month',
+      startDate: '15th Jul 2024',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTgyGqFm8Wd1TaxFYSqaBo92Speg_ZBkBXtA&s',
+      tags: ['Python', 'Machine Learning'],
+      skills: ['Python', 'Machine Learning', 'Data Visualization', 'SQL'],
+      responsibilities: [
+          'Assist in developing and implementing machine learning models',
+          'Perform data cleaning and preprocessing tasks',
+          'Create data visualizations to communicate insights'
+      ],
+      description: [
+          'Work on real-world data science projects',
+          'Learn from experienced data scientists and analysts',
+          'Opportunity to contribute to cutting-edge AI research'
+      ],
+      aboutCompany: 'DataMinds is a pioneering AI research company focusing on developing innovative machine learning solutions.'
+  },
+  {
+      id: 4,
+      title: 'Graphic Design Intern',
+      companyId: "102",
+      company: "DataMind Analytics",
+            location: 'Delhi',
+      duration: '3 months',
+      stipend: '₹12,000 /month',
+      startDate: 'Immediately',
+      logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTgyGqFm8Wd1TaxFYSqaBo92Speg_ZBkBXtA&s',
+      tags: ['Adobe Creative Suite', 'UI/UX'],
+      skills: ['Adobe Photoshop', 'Adobe Illustrator', 'UI/UX Design', 'Typography'],
+      responsibilities: [
+          'Create visually appealing graphics for various marketing materials',
+          'Assist in developing brand identities for clients',
+          'Contribute to UI/UX design projects'
+      ],
+      description: [
+          'Immerse yourself in a creative environment',
+          'Work on diverse design projects for various clients',
+          'Receive mentorship from experienced designers'
+      ],
+      aboutCompany: 'CreativeHub is a dynamic design agency known for its innovative and eye-catching visual solutions.'
+  },
+  {
+      id: 5,
+      title: 'Content Writing Intern',
+      companyId: "103",
+      company: "CreativePixel Design Studio",      
+      location: 'Remote',
+      duration: '2 months',
+      stipend: '₹10,000 /month',
+      startDate: '1st Sep 2024',
+      logo: 'https://www.digitalmarketingcommunity.com/wp-content/uploads/2018/12/Appnova.png',
+      tags: ['Blogging', 'SEO'],
+      skills: ['Content Writing', 'SEO', 'Research', 'Proofreading'],
+      responsibilities: [
+          'Write engaging blog posts and articles on various topics',
+          'Optimize content for search engines',
+          'Conduct research to ensure accuracy of information'
+      ],
+      description: [
+          'Hone your writing skills in a professional setting',
+          'Learn about SEO and content marketing strategies',
+          'Work with a team of experienced writers and editors'
+      ],
+      aboutCompany: 'WordCraft is a content creation agency that provides high-quality written content for businesses across various industries.'
+  },
+  {
+      id: 6,
+      title: 'Mobile App Development Intern',
+      companyId: "103",
+      company: "CreativePixel Design Studio",      
+      location: 'Hyderabad',
+      duration: '5 months',
+      stipend: '₹18,000 /month',
+      startDate: '1st Oct 2024',
+      logo: 'https://www.digitalmarketingcommunity.com/wp-content/uploads/2018/12/Appnova.png',
+      tags: ['iOS', 'Android', 'Flutter'],
+      skills: ['Flutter', 'Dart', 'Mobile UI Design', 'API Integration'],
+      responsibilities: [
+          'Assist in developing cross-platform mobile applications using Flutter',
+          'Implement UI designs and ensure a smooth user experience',
+          'Integrate RESTful APIs and third-party services'
+      ],
+      description: [
+          'Gain hands-on experience in mobile app development',
+          'Work on real projects that will be published on app stores',
+          'Learn best practices in mobile development and app publishing'
+      ],
+      aboutCompany: 'AppNova is a mobile app development company known for creating innovative and user-friendly applications for both iOS and Android platforms.'
+  }
+];
