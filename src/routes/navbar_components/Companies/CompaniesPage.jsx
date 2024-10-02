@@ -4,6 +4,45 @@ import CompanyCard from './CompanyCard';  // Import the modified CompanyCard
 
 const CompaniesPage = () => {
   const [sortBy, setSortBy] = useState('rating');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Sample data for companies
+  const companies = [
+    {
+      name: "TechInnovate Solutions",
+      companyId: "101",
+      industry: "Technology",
+      location: "San Francisco, CA",
+      employees: "5000+",
+      rating: "4.7",
+      openings: 25,
+    },
+    {
+      name: "DevOps Engineer",
+      companyId: "102",
+      industry: "IT Services & Consulting",
+      location: "San Francisco, CA",
+      employees: "5000+",
+      rating: "4.7",
+      openings: 25,
+    },
+    {
+      name: "CreativePixel Design Studio",
+      companyId: "103",
+      industry: "Design & Creative",
+      location: "San Francisco, CA",
+      employees: "5000+",
+      rating: "4.7",
+      openings: 25,
+    },
+    // Add more company objects as needed
+  ];
+
+  // Filter companies based on the search query
+  const filteredCompanies = companies.filter(company => 
+    company.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    company.industry.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -17,52 +56,35 @@ const CompaniesPage = () => {
                 type="text"
                 placeholder="Search companies or positions..."
                 className="w-full pl-10 pr-4 py-3 rounded-lg text-black"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}  // Update search query state
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
             </div>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value)}
-              className="w-48 bg-white text-black rounded-lg px-4 py-3"
-            >
-              <option value="rating">Sort by Rating</option>
-              <option value="openings">Sort by Openings</option>
-              <option value="employees">Sort by Size</option>
-            </select>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <CompanyCard
-            name="TechInnovate Solutions"
-            companyId="101"
-            industry="Technology"
-            location="San Francisco, CA"
-            employees="5000+"
-            rating="4.7"
-            openings={25}
-          />
-           <CompanyCard
-            name="DevOps Engineer"
-            companyId="102"
-            industry="IT Services & Consulting"
-            location="San Francisco, CA"
-            employees="5000+"
-            rating="4.7"
-            openings={25}
-          />
-          <CompanyCard
-            name="CreativePixel Design Studio"
-            companyId="103"
-            industry="Design & Creative"
-            location="San Francisco, CA"
-            employees="5000+"
-            rating="4.7"
-            openings={25}
-          />
-          {/* Add more CompanyCards */}
+          {filteredCompanies.length > 0 ? (
+            filteredCompanies.map((company) => (
+              <CompanyCard
+                key={company.companyId}
+                name={company.name}
+                companyId={company.companyId}
+                industry={company.industry}
+                location={company.location}
+                employees={company.employees}
+                rating={company.rating}
+                openings={company.openings}
+              />
+            ))
+          ) : (
+            <div className="col-span-full text-center text-gray-500">
+              No companies found matching your search.
+            </div>
+          )}
         </div>
       </main>
 
