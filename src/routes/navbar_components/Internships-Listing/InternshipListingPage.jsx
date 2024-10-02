@@ -3,7 +3,6 @@ import { Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { internshipListings } from '../../../lib/dummyData';
 
-
 const InternshipListingPage = () => {
     const navigate = useNavigate();
     const [profile, setProfile] = useState('');
@@ -12,10 +11,34 @@ const InternshipListingPage = () => {
     const [partTime, setPartTime] = useState(false);
     const [duration, setDuration] = useState('');
     const [stipend, setStipend] = useState(0);
-    
+    const [searchQuery, setSearchQuery] = useState('');
+
+    // Filter internships based on selected filters
+    const filteredInternships = internshipListings.filter((internship) => {
+        const matchesProfile = profile === '' || internship.title.toLowerCase().includes(profile.toLowerCase());
+        const matchesLocation = location === '' || internship.location.toLowerCase().includes(location.toLowerCase());
+        const matchesRemote = !remote || internship.tags.includes('Remote');
+        const matchesPartTime = !partTime || internship.tags.includes('Part-time');
+        const matchesDuration = duration === '' || internship.duration === duration;
+        const matchesStipend = stipend === 0 || parseInt(internship.stipend.replace(/[₹,]/g, '')) >= stipend;
+        const matchesSearchQuery =
+            searchQuery === '' ||
+            internship.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            internship.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+        return (
+            matchesProfile &&
+            matchesLocation &&
+            matchesRemote &&
+            matchesPartTime &&
+            matchesDuration &&
+            matchesStipend &&
+            matchesSearchQuery
+        );
+    });
 
     const InternshipCard = ({ internship }) => (
-        <div 
+        <div
             className="bg-white p-6 rounded-lg shadow-lg hover:shadow-purple-300 transition-all duration-300 ease-in-out transform hover:-translate-y-1 cursor-pointer mb-6"
             onClick={() => navigate(`/internship/${internship.id}`)}
         >
@@ -48,7 +71,7 @@ const InternshipListingPage = () => {
 
     return (
         <div className="container mx-auto p-4 bg-purple-50">
-              <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 rounded-lg shadow-md">
+            <div className="bg-gradient-to-r from-purple-600 to-purple-800 text-white p-6 rounded-lg shadow-md">
                 <h1 className="text-3xl font-bold">Kickstart Your Career with Exciting Internships!</h1>
                 <p className="mt-2 text-purple-100">Find internships that align with your passion and skills</p>
             </div>
@@ -59,13 +82,12 @@ const InternshipListingPage = () => {
                     <span className="mx-2">&gt;</span>
                     <span>Internships</span>
                 </div>
-                <h2 className="text-2xl font-bold mt-4 text-purple-800">2,500+ Internships</h2>
+                <h2 className="text-2xl font-bold mt-4 text-purple-800">{filteredInternships.length} Internships</h2>
                 <p className="text-sm text-purple-600">Apply to Latest Internship Opportunities Across India</p>
             </div>
-            
-            
+
             <div className="flex mt-6 space-x-6">
-            <div className="w-1/4">
+                <div className="w-1/4">
                     <div className="bg-white p-6 rounded-lg shadow-md">
                         <h3 className="text-lg font-semibold mb-4 text-purple-800">Filters</h3>
                         <div className="space-y-4">
@@ -127,6 +149,7 @@ const InternshipListingPage = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Minimum Monthly Stipend</label>
+                                <div className="text-center text-purple-700 font-bold mb-1">₹{stipend}</div>
                                 <input
                                     type="range"
                                     min="0"
@@ -142,7 +165,18 @@ const InternshipListingPage = () => {
                                 </div>
                             </div>
                         </div>
-                        <button className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 mt-4">
+                        <button
+                            className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 mt-4"
+                            onClick={() => {
+                                setProfile('');
+                                setLocation('');
+                                setRemote(false);
+                                setPartTime(false);
+                                setDuration('');
+                                setStipend(0);
+                                setSearchQuery('');
+                            }}
+                        >
                             Clear all
                         </button>
                     </div>
@@ -153,6 +187,8 @@ const InternshipListingPage = () => {
                                 type="text"
                                 className="block w-full rounded-lg border-purple-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-50 pr-10"
                                 placeholder="e.g. Web Development, Bangalore, Google"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
                             />
                             <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-500 hover:text-purple-700">
                                 <Search size={20} />
@@ -160,12 +196,17 @@ const InternshipListingPage = () => {
                         </div>
                     </div>
                 </div>
-                
-                
+
                 <div className="w-3/4">
-                    {internshipListings.map((internship, index) => (
-                        <InternshipCard key={index} internship={internship} />
-                    ))}
+                    {filteredInternships.length > 0 ? (
+                        filteredInternships.map((internship, index) => (
+                            <InternshipCard key={index} internship={internship} />
+                        ))
+                    ) : (
+                        <div className="text-center text-purple-700 text-lg">
+                            No internships match your search criteria.
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

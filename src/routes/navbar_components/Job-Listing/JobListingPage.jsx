@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { jobListings } from '../../../lib/dummyData';
 
-
-
 const JobListingPage = () => {
   const [profile, setProfile] = useState('');
   const [location, setLocation] = useState('');
@@ -12,6 +10,58 @@ const JobListingPage = () => {
   const [partTime, setPartTime] = useState(false);
   const [salary, setSalary] = useState(0);
   const [experience, setExperience] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Helper function to safely extract salary range
+  const extractSalary = (salaryStr) => {
+    if (!salaryStr) return 0; // If no salary data, return 0
+    const salaryRange = salaryStr.split('-'); // Split the range
+    if (salaryRange.length < 2) return 0; // If there's no range, return 0
+    // Extract the upper salary, remove non-numeric characters
+    const upperSalary = salaryRange[1].replace(/[₹, PA]/g, '');
+    return parseFloat(upperSalary) / 100000; // Convert to lakhs
+  };
+
+  // Helper function to match experience
+  const matchExperience = (jobExperience, selectedExperience) => {
+    if (!selectedExperience) return true;
+    const jobExpRange = jobExperience.split('-');
+    if (jobExpRange.length === 1) {
+      return selectedExperience.includes(jobExpRange[0]);
+    }
+    const minExp = parseFloat(jobExpRange[0]);
+    const maxExp = jobExpRange[1].includes('+') ? Infinity : parseFloat(jobExpRange[1]);
+    const selectedExpRange = selectedExperience.split('-');
+    const selectedMinExp = parseFloat(selectedExpRange[0]);
+    const selectedMaxExp = selectedExpRange[1]?.includes('+') ? Infinity : parseFloat(selectedExpRange[1]);
+
+    return (minExp <= selectedMaxExp) && (maxExp >= selectedMinExp);
+  };
+
+  // Filter jobs based on selected filters
+  const filteredJobs = jobListings.filter((job) => {
+    const matchesProfile = profile === '' || job.title.toLowerCase().includes(profile.toLowerCase());
+    const matchesLocation = location === '' || job.location.toLowerCase().includes(location.toLowerCase());
+    const matchesWorkFromHome = !workFromHome || job.tags.includes('Remote') || job.tags.includes('Work From Home');
+    const matchesPartTime = !partTime || job.tags.includes('Part-time');
+    const jobSalary = extractSalary(job.salary);
+    const matchesSalary = salary === 0 || jobSalary >= salary;
+    const matchesExperience = experience === '' || matchExperience(job.experience, experience);
+    const matchesSearchQuery =
+      searchQuery === '' ||
+      job.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.title.toLowerCase().includes(searchQuery.toLowerCase());
+
+    return (
+      matchesProfile &&
+      matchesLocation &&
+      matchesWorkFromHome &&
+      matchesPartTime &&
+      matchesSalary &&
+      matchesExperience &&
+      matchesSearchQuery
+    );
+  });
 
   const JobCard = ({ job }) => (
     <Link to={`/job/${job.id}`} className="block">
@@ -56,7 +106,7 @@ const JobListingPage = () => {
           <span className="mx-2">&gt;</span>
           <span>Jobs</span>
         </div>
-        <h2 className="text-2xl font-bold mt-4 text-purple-800">{jobListings.length} Jobs</h2>
+        <h2 className="text-2xl font-bold mt-4 text-purple-800">{filteredJobs.length} Jobs</h2>
         <p className="text-sm text-purple-600">Search and Apply to Latest Job Vacancies & Openings in India</p>
       </div>
 
@@ -66,7 +116,6 @@ const JobListingPage = () => {
         <div className="w-1/4">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h3 className="text-lg font-semibold mb-4 text-purple-800">Filters</h3>
-            {/* ... (include all filter inputs) */}
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700">Profile</label>
@@ -111,21 +160,28 @@ const JobListingPage = () => {
                 </label>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700">Annual salary (in lakhs)</label>
-                <input
-                  type="range"
-                  min="0"
-                  max="10"
-                  step="0.5"
-                  className="w-full"
-                  value={salary}
-                  onChange={(e) => setSalary(parseFloat(e.target.value))}
-                />
-                <div className="flex justify-between text-xs text-gray-600">
-                  <span>0</span>
-                  <span>10</span>
-                </div>
-              </div>
+  <label className="block text-sm font-medium text-gray-700">Annual salary (in lakhs)</label>
+  
+  {/* Display current salary value above the range slider */}
+  <div className="text-center text-purple-700 font-bold mb-1">
+    ₹{salary} LPA
+  </div>
+
+  <input
+    type="range"
+    min="0"
+    max="60"
+    step="0.5"
+    className="w-full"
+    value={salary}
+    onChange={(e) => setSalary(parseFloat(e.target.value))}
+  />
+  <div className="flex justify-between text-xs text-gray-600">
+    <span>0</span>
+    <span>60</span>
+  </div>
+</div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700">Years of experience</label>
                 <select
@@ -141,7 +197,17 @@ const JobListingPage = () => {
                 </select>
               </div>
             </div>
-            <button className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 mt-4">
+            <button
+              className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition duration-300 mt-4"
+              onClick={() => {
+                setProfile('');
+                setLocation('');
+                setWorkFromHome(false);
+                setPartTime(false);
+                setSalary(0);
+                setExperience('');
+              }}
+            >
               Clear all
             </button>
           </div>
@@ -152,6 +218,8 @@ const JobListingPage = () => {
                 type="text"
                 className="block w-full rounded-lg border-purple-300 shadow-sm focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-50 pr-10"
                 placeholder="e.g. Design, Mumbai, Infosys"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-500 hover:text-purple-700">
                 <Search size={20} />
@@ -162,9 +230,11 @@ const JobListingPage = () => {
 
         {/* Job listings */}
         <div className="w-3/4">
-          {jobListings.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job) => <JobCard key={job.id} job={job} />)
+          ) : (
+            <p className="text-purple-600">No jobs found matching your criteria.</p>
+          )}
         </div>
       </div>
     </div>
