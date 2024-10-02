@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, MapPin, Clock, Users } from 'lucide-react';
 
-import { internshipListings } from './InternshipListingPage';
+import { internshipListings } from '../../../lib/dummyData';
 
 const InternshipDetailsPage = () => {
     const { id } = useParams();
