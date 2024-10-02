@@ -105,6 +105,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png",
     industry: "Technology",
     size: "100,000+ employees",
+    position: "Backend Developer",
+    locations: ["Kolkata", "Mumbai", "New Delhi", "Hyderabad"],
+    experience: "1 - 4 years",
+    salary: "Not Disclosed",
+    skills: ["No-Code", "Web Development", "Software Engineering"],
   },
   {
     id: 2,
@@ -112,6 +117,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png",
     industry: "Social Media",
     size: "70,000+ employees",
+    position: "Frontend Developer",
+    locations: ["Menlo Park", "London", "Singapore"],
+    experience: "2 - 5 years",
+    salary: "Not Disclosed",
+    skills: ["React", "JavaScript", "UI/UX Design"],
   },
   {
     id: 3,
@@ -119,6 +129,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1024px-Amazon_Web_Services_Logo.svg.png",
     industry: "E-commerce",
     size: "1,000,000+ employees",
+    position: "Data Scientist",
+    locations: ["Seattle", "Austin", "Vancouver"],
+    experience: "3 - 6 years",
+    salary: "Not Disclosed",
+    skills: ["Python", "Machine Learning", "Data Analysis"],
   },
   {
     id: 4,
@@ -126,6 +141,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png",
     industry: "Entertainment",
     size: "12,000+ employees",
+    position: "UI/UX Designer",
+    locations: ["Los Gatos", "London", "Tokyo"],
+    experience: "2 - 4 years",
+    salary: "Not Disclosed",
+    skills: ["Figma", "User Research", "Prototyping"],
   },
   {
     id: 5,
@@ -133,6 +153,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/2560px-Microsoft_logo.svg.png",
     industry: "Technology",
     size: "181,000+ employees",
+    position: "Software Engineer",
+    locations: ["Redmond", "San Francisco", "Hyderabad"],
+    experience: "1 - 3 years",
+    salary: "Not Disclosed",
+    skills: ["C#", "Azure", "Cloud Computing"],
   },
   {
     id: 6,
@@ -140,6 +165,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Tesla_logo.png/800px-Tesla_logo.png",
     industry: "Automotive",
     size: "127,855 employees",
+    position: "Product Manager",
+    locations: ["Palo Alto", "Austin", "Berlin"],
+    experience: "3 - 5 years",
+    salary: "Not Disclosed",
+    skills: ["Agile", "Product Development", "Market Research"],
   },
   {
     id: 7,
@@ -147,6 +177,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/1024px-Apple_logo_black.svg.png",
     industry: "Technology",
     size: "147,000+ employees",
+    position: "Graphic Designer",
+    locations: ["Cupertino", "London", "Tokyo"],
+    experience: "1 - 3 years",
+    salary: "Not Disclosed",
+    skills: ["Adobe Suite", "Branding", "Visual Design"],
   },
   {
     id: 8,
@@ -154,6 +189,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Spotify_logo_with_text.svg/2560px-Spotify_logo_with_text.svg.png",
     industry: "Music Streaming",
     size: "6,500+ employees",
+    position: "Content Writer",
+    locations: ["Stockholm", "New York", "London"],
+    experience: "2 - 4 years",
+    salary: "Not Disclosed",
+    skills: ["SEO", "Copywriting", "Content Strategy"],
   },
   {
     id: 9,
@@ -161,6 +201,11 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/2560px-IBM_logo.svg.png",
     industry: "Technology",
     size: "350,000+ employees",
+    position: "DevOps Engineer",
+    locations: ["Armonk", "Dallas", "Bangalore"],
+    experience: "2 - 5 years",
+    salary: "Not Disclosed",
+    skills: ["Docker", "Kubernetes", "CI/CD"],
   },
   {
     id: 10,
@@ -168,8 +213,14 @@ export const Companies = [
     logo: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a6/Nike_Logo.svg/2560px-Nike_Logo.svg.png",
     industry: "Retail",
     size: "75,400 employees",
+    position: "Marketing Manager",
+    locations: ["Beaverton", "New York", "Shanghai"],
+    experience: "3 - 6 years",
+    salary: "Not Disclosed",
+    skills: ["Digital Marketing", "Brand Management", "Market Analysis"],
   },
 ];
+
 
 export const mockInterviewData = [
   {

@@ -50,18 +50,19 @@ export default function Content() {
 
   return (
     <div className="w-full h-full mx-auto bg-purple-50 pt-10">
-      <div className="grid grid-cols-2 items-center">
+      {/* Section 1 */}
+      <div className="grid grid-cols-2 items-center mb-10" >
         <div className="w-full h-full mx-auto p-10">
           <Slider />
         </div>
-        <div className="mx-auto w-z h-[300px]">
-          <h1 className="text-3xl font-extrabold">
+        <div className="mx-auto  h-[300px]">
+          <h1 className="text-4xl font-extrabold">
             <span className="text-purple-500">
                Interview Mastery
             </span>{" "}
             Through Unlimited Practices
           </h1>
-          <p className="mt-5 text-sm">
+          <p className="mt-5 text-md text-gray-600 font-semibold  ">
             Practice for any {isPositionSelected ? "job position" : "company"} to boost your confidence and skills with unlimited, on-demand interview simulations.
           </p>
 
@@ -90,8 +91,8 @@ export default function Content() {
           </button>
         </div>
       </div>
-
-      <div className="w-full h-full text-center">
+      {/* Section 2 */}
+      <div className=" text-center">
         <h1 className="text-3xl font-extrabold">Select Your Preferred <span className="text-purple-500">Interview</span></h1>
       </div>
       <div

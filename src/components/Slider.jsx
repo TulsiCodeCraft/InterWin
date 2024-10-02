@@ -29,7 +29,7 @@ export default function Slider() {
   };
 
   return (
-    <div className="relative overflow-hidden w-[400px] h-[350px] ">
+    <div className="relative overflow-hidden w-full h-fit">
       <div
         className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -50,14 +50,14 @@ export default function Slider() {
 
       <button
         onClick={handlePrev}
-        className="absolute top-[35%] left-0 transform -translate-y-1/2 w-[20px] h-[20px] bg-white rounded-full p-2 flex items-center justify-center"
+        className="absolute top-[50%] left-0 transform -translate-y-1/2 w-[20px] h-[20px] bg-white rounded-full p-2 flex items-center justify-center"
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
 
       <button
         onClick={handleNext}
-        className="absolute top-[35%] right-0 transform -translate-y-1/2 m-auto w-[20px] h-[20px] bg-white rounded-full p-1 flex items-center justify-center"
+        className="absolute top-[50%] right-0 transform -translate-y-1/2 m-auto w-[20px] h-[20px] bg-white rounded-full p-1 flex items-center justify-center"
       >
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
