@@ -35,6 +35,9 @@ import JobDetailsPage from "./routes/navbar_components/Job-Listing/JobDetailsPag
 import ScrollToTop from "./components/ScrollToTop";
 import InternshipDetailsPage from "./routes/navbar_components/Internships-Listing/InternshipDetailsPage";
 import CompanyDetails from "./routes/navbar_components/Companies/CompanyDetails";
+import JobApplicationForm from "./routes/navbar_components/Job-Listing/JobApplicationForm";
+import InternshipForm from "./routes/navbar_components/Internships-Listing/InternshipForm";
+
 
 
 function App() {
@@ -54,11 +57,13 @@ function App() {
           {/* job-listing page */}
           <Route path="/job-listing" element={<JobListingPage/>} />
           <Route path="/job/:id" element={<JobDetailsPage />} />
+          <Route path="/apply/:id" element={<JobApplicationForm />} />
           
 
           {/* internships-listing page */}
           <Route path="/internships-listing" element={<InternshipListingPage />}/>
           <Route path="/internship/:id" element={<InternshipDetailsPage />}/>
+          <Route path="/apply-internship/:id" element={<InternshipForm />} />
 
           {/* services page */}
           <Route path="/services" element={<ServicesPage />} />
