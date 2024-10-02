@@ -17,6 +17,10 @@ const JobDetailsPage = () => {
     return <div>Job not found</div>;
   }
 
+  const handleApplyNow = () => {
+    navigate(`/apply/${id}`);
+  };
+
 
 
   return (
@@ -50,7 +54,7 @@ const JobDetailsPage = () => {
         </div>
         <div className="mt-4 flex gap-2">
 
-          <button className=" text-white rounded-full hover:bg-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 font-semibold shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600 py-2 px-4 ">Apply Now!</button>
+          <button  onClick={handleApplyNow} className=" text-white rounded-full hover:bg-blue-600 bg-gradient-to-r from-purple-500 to-blue-500 font-semibold shadow-lg transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:from-purple-600 hover:to-blue-600 py-2 px-4 ">Apply Now!</button>
         </div>
         <div className="mt-4 flex gap-4 text-sm text-gray-500">
           <span className="flex items-center"><Clock size={16} className="mr-1" />Posted: {job.postedDate}</span>
@@ -114,7 +118,7 @@ const JobDetailsPage = () => {
             ))}
           </div>
         </div>
-       
+
 
 
 
