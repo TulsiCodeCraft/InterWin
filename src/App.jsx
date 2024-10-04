@@ -38,6 +38,8 @@ import CompanyDetails from "./routes/navbar_components/Companies/CompanyDetails"
 import JobApplicationForm from "./routes/navbar_components/Job-Listing/JobApplicationForm";
 import InternshipForm from "./routes/navbar_components/Internships-Listing/InternshipForm";
 
+import Dashboard from "./routes/skill_evaluation/Dashboard";
+
 
 
 
@@ -45,6 +47,11 @@ function App() {
   return (
     <>
       <Router>
+      <Routes>
+        
+      <Route path="/skill-evaluation" element={<Dashboard />} />
+      <Route path="*" element={
+      <>
       <Navbar />
 
       <ScrollToTop/>
@@ -126,12 +133,16 @@ function App() {
         <Route path="/interview_prep/company" element={<Company />} />
         <Route path="/interview_prep/position/:position" element={<PositionDetails />} />
         <Route path="/interview_prep/mock-interview/:position/:level" element={<MockInterview />} />
+        
           {/* meeting schedule */}
 
           <Route path="/meeting_schedule" element={<Layout />} />
           <Route path="/meeting_schedule/:id" element={<CardDetail />} />
         </Routes>
         <Footer/>
+        </>
+         } />
+          </Routes>
       </Router>
     </>
   );
