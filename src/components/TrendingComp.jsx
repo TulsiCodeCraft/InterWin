@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Companies } from '../lib/dummyData';  // Import data from dummyData.js
+import { InterviewCompanies } from '../lib/dummyData';  // Import data from dummyData.js
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -112,7 +112,7 @@ const CompanySlider = () => {
       <h3 onClick={ExploreMore}  className=' cursor-pointer text-purple-500 font-semibold ' >Explore More <span><FontAwesomeIcon icon={faChevronRight} /></span></h3>
       </div>
       <Slider {...settings}>
-        {Companies.map((company) => (
+        {InterviewCompanies.map((company) => (
           <CompanyCard key={company.id} name={company.name} logo={company.logo} />
         ))}
       </Slider>

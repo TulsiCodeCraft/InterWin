@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Slider from "./Slider";
 import { useNavigate } from "react-router-dom";
 
-import { Companies, mockInterviewData } from "../lib/dummyData";
+import { InterviewCompanies, mockInterviewData } from "../lib/dummyData";
 import interviewImagePosition from "../assets/images/select-company1.jpg";
 import interviewImageCompany from "../assets/images/select-company2.jpg";
 
@@ -166,7 +166,7 @@ export default function Content() {
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-purple-600"
             >
               <option value="">--Select Company--</option>
-              {Companies.map((company) => (
+              {InterviewCompanies.map((company) => (
                 <option key={company.id} value={company.name}>
                   {company.name}
                 </option>

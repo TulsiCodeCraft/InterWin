@@ -98,7 +98,7 @@ const cardsData = [
 ];
 export default cardsData;
 
-export const Companies = [
+export const InterviewCompanies = [
   {
     id: 1,
     name: "Google",
@@ -1103,4 +1103,39 @@ export const internshipListings = [
       ],
       aboutCompany: 'AppNova is a mobile app development company known for creating innovative and user-friendly applications for both iOS and Android platforms.'
   }
+];
+
+
+ export const companies = [
+  {
+    name: "TechInnovate Solutions",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyR-eY6XruEswHpvpwCyz_GFbSd8odEyCXng&s",
+    companyId: "101",
+    industry: "Technology",
+    location: "San Francisco, CA",
+    employees: "5000+",
+    rating: "4.7",
+    openings: 25,
+  },
+  {
+    name: "DevOps Engineer",
+    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFrEHaJtr-L7g/company-logo_200_200/company-logo_200_200/0/1676687822078?e=2147483647&v=beta&t=EybQieXtE5sYqMf9QV6r-YuJP8NyV4nNkM01_xC2G20",
+    companyId: "102",
+    industry: "IT Services & Consulting",
+    location: "San Francisco, CA",
+    employees: "5000+",
+    rating: "4.7",
+    openings: 25,
+  },
+  {
+    name: "CreativePixel Design Studio",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEyUyPc4AUEEKcfqg6CRf-EF4iafOm6kaRhw&s",
+    companyId: "103",
+    industry: "Design & Creative",
+    location: "San Francisco, CA",
+    employees: "5000+",
+    rating: "4.7",
+    openings: 25,
+  },
+  // Add more company objects as needed
 ];

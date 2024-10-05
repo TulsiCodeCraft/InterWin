@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Companies } from "../../lib/dummyData";
+import { InterviewCompanies } from "../../lib/dummyData";
 export default function Company() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedIndustry, setSelectedIndustry] = useState(""); // Example filter
   const [selectedSize, setSelectedSize] = useState(""); // Example filter
 
   // Filters and search
-  const filteredCompanies = Companies.filter((company) => {
+  const filteredCompanies = InterviewCompanies.filter((company) => {
     return (
       company.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
       (selectedIndustry ? company.industry === selectedIndustry : true) &&

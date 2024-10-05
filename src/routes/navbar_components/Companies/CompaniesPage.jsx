@@ -1,42 +1,14 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import CompanyCard from './CompanyCard';  // Import the modified CompanyCard
+import { companies } from '../../../lib/dummyData';
 
 const CompaniesPage = () => {
   const [sortBy, setSortBy] = useState('rating');
   const [searchQuery, setSearchQuery] = useState('');
 
   // Sample data for companies
-  const companies = [
-    {
-      name: "TechInnovate Solutions",
-      companyId: "101",
-      industry: "Technology",
-      location: "San Francisco, CA",
-      employees: "5000+",
-      rating: "4.7",
-      openings: 25,
-    },
-    {
-      name: "DevOps Engineer",
-      companyId: "102",
-      industry: "IT Services & Consulting",
-      location: "San Francisco, CA",
-      employees: "5000+",
-      rating: "4.7",
-      openings: 25,
-    },
-    {
-      name: "CreativePixel Design Studio",
-      companyId: "103",
-      industry: "Design & Creative",
-      location: "San Francisco, CA",
-      employees: "5000+",
-      rating: "4.7",
-      openings: 25,
-    },
-    // Add more company objects as needed
-  ];
+  
 
   // Filter companies based on the search query
   const filteredCompanies = companies.filter(company => 
