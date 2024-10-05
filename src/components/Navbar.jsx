@@ -1,6 +1,6 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import chatbot from '../assets/images/chatbot.png';
-import ChatbotUI from '../routes/chatbot/ChatbotUI'; 
+import ChatbotUI from '../routes/chatbot/ChatbotUI';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -26,31 +26,31 @@ const Navbar = () => {
     <>
       <nav className="bg-purple-100 shadow-md p-4 px-20 flex justify-between items-center">
         <div className="text-2xl font-extrabold text-left text-purple-600">
-        <Link to="/" >
+          <Link to="/" >
 
-          Interwin
+            Interwin
           </Link>
 
         </div>
 
         <div className="flex space-x-8 text-lg">
-        <Link to="/job-listing" className="hover:underline hover:text-purple-600">
-        Jobs
-      </Link>
-      <Link to="/internships-listing" className="hover:underline hover:text-purple-600">
-        Internships
-      </Link>
-      <Link to="/services" className="hover:underline hover:text-purple-600">
-        Services
-      </Link>
-      <Link to="/companies" className="hover:underline hover:text-purple-600">
-        Companies
-      </Link>
+          <Link to="/job-listing" className="hover:underline hover:text-purple-600">
+            Jobs
+          </Link>
+          <Link to="/internships-listing" className="hover:underline hover:text-purple-600">
+            Internships
+          </Link>
+          <Link to="/services" className="hover:underline hover:text-purple-600">
+            Services
+          </Link>
+          <Link to="/companies" className="hover:underline hover:text-purple-600">
+            Companies
+          </Link>
         </div>
 
         <div className="flex items-center space-x-8">
-        <div className="relative">
-        <button
+          <div className="relative">
+            <button
               ref={chatbotIconRef}
               onClick={toggleChatbot}
               className="transition-transform duration-200 hover:scale-110 focus:outline-none"
@@ -87,7 +87,7 @@ const Navbar = () => {
             {loginDropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-purple-100 border border-gray-200 shadow-md rounded-lg z-50">
                 <Link to="/login" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
-                  Login as Student 
+                  Login as Student
                 </Link>
                 <Link Link to="/RecruiterLogin" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Login as Recruiter
