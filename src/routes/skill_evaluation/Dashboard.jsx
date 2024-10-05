@@ -44,7 +44,6 @@ const quizData = [
   ];
   
 
-// ... (keep the existing data: quizData, mockInterviewData, skillsData, learningProgressData, performanceData)
 
 const Navbar = () => {
   <ScrollToTop/>
