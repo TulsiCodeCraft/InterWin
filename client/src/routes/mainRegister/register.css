@@ -1,0 +1,110 @@
+/* Global Styles */
+body {
+  background-color: #ffffff; /* Change to white background */
+  font-family: 'Arial', sans-serif; /* Clean font style */
+}
+
+/* Flexbox for centering */
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height to center vertically */
+}
+
+/* Card style for the form */
+.bg-white {
+  background-color: #ffffff; /* White background for form */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  border-radius: 12px; /* Rounded corners */
+  padding: 30px; /* Increased padding for spaciousness */
+  max-width: 400px; /* Maximum width of the card */
+  width: 100%; /* Responsive width */
+}
+
+/* Image Style */
+.img-side {
+  max-width: 500px; /* Adjust the max width as needed */
+  margin-left: 20px; /* Space between image and form */
+}
+
+/* Wrapper for image and form */
+.form-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align */
+}
+
+/* Heading style */
+h2 {
+  color: #343a40; /* Darker color for the heading */
+  margin-bottom: 20px; /* Space below heading */
+  text-align: center; /* Center align the heading */
+}
+
+/* Margin for form fields */
+.mb-3 {
+  margin-bottom: 15px; /* Adjust margin for form fields */
+}
+
+/* Input field styles */
+.form-control {
+  border: 1px solid #ced4da; /* Light border for inputs */
+  border-radius: 6px; /* Slightly rounded inputs */
+  padding: 10px; /* Padding for input fields */
+  transition: border-color 0.2s; /* Smooth transition for border color */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.25); /* Blue shadow on focus */
+}
+
+/* Button styles */
+.btn {
+  font-size: 16px; /* Increase button font size */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  padding: 10px;
+  border-radius: 5px;
+  display: block; /* Center block element */
+  width: 86%; /* Full width for buttons */
+  margin: 10px 0; /* Space between buttons */
+}
+
+.btn-success {
+  background-color: #28a745; /* Green background for the register button */
+  border-color: #28a745; /* Match border color */
+  color: #ffffff; /* White text for buttons */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+.btn-default {
+  background-color: #f8f9fa; /* Light grey for login button */
+  color: #343a40; /* Dark text for contrast */
+  border: 1px solid #ced4da; /* Light border */
+}
+
+.btn-default:hover {
+  background-color: #007bff; /* Blue on hover */
+  color: #ffffff; /* Change text color to white on hover */
+}
+
+/* Link styles */
+.text-decoration-none {
+  text-decoration: none; /* Remove underline for links */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .bg-white {
+      width: 90%; /* Make the form responsive on smaller screens */
+  }
+
+  .img-side {
+      display: none; /* Hide image on small screens */
+  }
+}

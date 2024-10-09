@@ -1,3 +1,4 @@
+
 // File: /api/index.js
 const express = require("express");
 const mongoose = require('mongoose');
@@ -51,3 +52,22 @@ const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 });
+
+
+const authRoutes = require('./routes/auth'); // Importing auth routes
+
+
+
+
+// Connect to MongoDB
+mongoose.connect("mongodb://localhost:27017/Users", { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
+
+// Use auth routes
+app.use('/api', authRoutes); // Prefixing routes with /api
+
+app.listen(3001, () => {
+    console.log("Server is running on port 3001");
+});
+
