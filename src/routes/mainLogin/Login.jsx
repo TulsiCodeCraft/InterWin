@@ -48,9 +48,7 @@ const LoginScreen = () => {
                     <form className="space-y-4">
                         <input type="email" placeholder="Enter Email Id" className="w-full p-2 border rounded" />
                         <input type="tel" placeholder="Enter Phone No" className="w-full p-2 border rounded" />
-                        <button type="button" className="text-blue-500 hover:text-blue-700 m-0">
-                            Login via OTP
-                        </button>
+                        
                         <div className="relative">
                             <input
                                 type={showPassword ? "text" : "password"}
