@@ -44,6 +44,7 @@ import RecruiterDashboard from "./routes/recruiter/recruiterDashboard";
 
 import MyApplication from "./routes/application/application";
 import { ApplicationProvider } from "./context/ApplicationContext";
+import ResumePreview from "./routes/Resume/resumePreview";
 
 
 
@@ -128,6 +129,7 @@ function App() {
           {/*resume */}
           <Route path="/resume" element={<ResumeMaker />} />
           <Route path="/resume/templates" element={<ResumeTemplates />} />
+          <Route path="/resume-preview/:id" element={<ResumePreview />} />
           <Route
             path="/resume/enter-details"
             element={<EnterDetails />}

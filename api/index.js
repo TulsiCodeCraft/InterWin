@@ -1,7 +1,8 @@
-const express = require("express")
-const mongoose = require('mongoose')
-const cors = require("cors")
-const UsersModel = require('./models/Users')
+import  express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import UsersModel from './models/Users.js'
+import router from './routes/resumeRoutes.js'
 
 const app = express()
 app.use(express.json())
@@ -30,6 +31,8 @@ app.post('/register', (req, res) => {
         .then(Users => res.json(Users))
         .catch(err => res.json(err))
 })
+
+app.use('/api/resume-builder', router )
 
 
 app.listen(3001, () => {
