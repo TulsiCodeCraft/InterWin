@@ -33,8 +33,10 @@ app.use('/api/hiring-forms', hiringFormRoutes);
 
 
 // Use auth routes
-app.use('/api', authRoutes);
-app.use('/api', instructorRoutes); // Prefixing routes with /api
+app.use('/login', authRoutes);
+app.use('/register', authRoutes);
+app.use('/login', instructorRoutes);
+app.use('/register', instructorRoutes); // Prefixing routes with /api
 
 app.listen(3001, () => {
     console.log("Server is running on port 3001");
