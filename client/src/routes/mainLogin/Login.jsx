@@ -16,7 +16,7 @@ function Login() {
             .then(result => {
                 console.log(result);
                 if (result.data === "Success") {
-                    navigate('/home');
+                    navigate('/');
                 }
             })
             .catch(err => console.log(err));
@@ -57,9 +57,8 @@ function Login() {
                             Login
                         </button>
                     </form>
-                    <p>Don't have an account? <Link to="/register" className="btn btn-default border w-100 bg-light rounded-0 text-decoration-none">
-                        Sign Up
-                    </Link></p>
+                    <Link to="/register">{"Don't"} you have an account?</Link>
+
                 </div>
                
             </div>

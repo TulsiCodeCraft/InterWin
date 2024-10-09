@@ -44,6 +44,7 @@ import RecruiterDashboard from "./routes/recruiter/recruiterDashboard";
 
 import MyApplication from "./routes/application/application";
 import { ApplicationProvider } from "./context/ApplicationContext";
+import InstructorRegister from "./routes/instructor/InstructorRegister";
 
 
 
@@ -92,6 +93,9 @@ function App() {
 
           {/* instructor login page */}
           <Route path="/InstructorLogin" element={<InstructorLogin />} />
+
+          {/* instructor login page */}
+          <Route path="/InstructorRegister" element={<InstructorRegister />} />
 
           {/* recruiter login page */}
           <Route path="/RecruiterLogin" element={<RecruitePage />} />
