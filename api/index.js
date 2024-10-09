@@ -1,37 +1,20 @@
-const express = require("express")
-const mongoose = require('mongoose')
-const cors = require("cors")
-const UsersModel = require('./models/Users')
+const express = require("express");
+const mongoose = require('mongoose');
+const cors = require("cors");
+const authRoutes = require('./routes/auth'); // Importing auth routes
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/Users");
+// Connect to MongoDB
+mongoose.connect("mongodb://localhost:27017/Users", { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log(err));
 
-app.post("/login", (req, res) => {
-    const { email, password } = req.body;
-    UsersModel.findOne({ email: email })
-        .then(user => {
-            if (user) {
-                if (user.password === password) {
-                    res.json("Success")
-                } else {
-                    res.json("The password is incorrect")
-                }
-            }else{
-                res.json("No record existed")
-            }
-        })
-})
-
-app.post('/register', (req, res) => {
-    UsersModel.create(req.body)
-        .then(Users => res.json(Users))
-        .catch(err => res.json(err))
-})
-
+// Use auth routes
+app.use('/api', authRoutes); // Prefixing routes with /api
 
 app.listen(3001, () => {
-    console.log("server is running")
-})
+    console.log("Server is running on port 3001");
+});
