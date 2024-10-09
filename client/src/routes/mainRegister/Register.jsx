@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-import React from "react";
-import "./register.scss"
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-=======
->>>>>>> a23a888250ca6fa5672b6212a05316b886a7fe57
+
+
+
 import { useState } from "react";
 import {Link} from "react-router-dom";
 import axios from 'axios'
