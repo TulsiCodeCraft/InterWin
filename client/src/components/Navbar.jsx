@@ -119,7 +119,7 @@ const Navbar = () => {
                 <a href="/profile" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   Profile
                 </a>
-                <a href="/application" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
+                <a href="/my-applications" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">
                   My Application
                 </a>
                 <a href="/logout" className="block px-4 py-2 text-gray-800 hover:bg-purple-200">

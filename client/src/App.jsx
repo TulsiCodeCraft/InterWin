@@ -39,6 +39,8 @@ import JobApplicationForm from "./routes/navbar_components/Job-Listing/JobApplic
 import InternshipForm from "./routes/navbar_components/Internships-Listing/InternshipForm";
 
 import Dashboard from "./routes/skill_evaluation/Dashboard";
+import MyApplication from "./routes/application/application";
+import { ApplicationProvider } from "./context/ApplicationContext";
 
 
 
@@ -46,6 +48,7 @@ import Dashboard from "./routes/skill_evaluation/Dashboard";
 function App() {
   return (
     <>
+     <ApplicationProvider>
       <Router>
       <Routes>
         
@@ -104,6 +107,8 @@ function App() {
           {/*edit_profile */}
           <Route path="/edit-profile" element={<EditProfile />} />
 
+          <Route path="/my-applications" element={<MyApplication />} />
+
           
 
 
@@ -144,6 +149,7 @@ function App() {
          } />
           </Routes>
       </Router>
+      </ApplicationProvider>
     </>
   );
 }
