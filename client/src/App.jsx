@@ -39,6 +39,7 @@ import JobApplicationForm from "./routes/navbar_components/Job-Listing/JobApplic
 import InternshipForm from "./routes/navbar_components/Internships-Listing/InternshipForm";
 
 import Dashboard from "./routes/skill_evaluation/Dashboard";
+import RecruiterDashboard from "./routes/recruiter/recruiterDashboard";
 
 
 
@@ -88,6 +89,7 @@ function App() {
 
           {/* recruiter login page */}
           <Route path="/RecruiterLogin" element={<RecruitePage />} />
+          <Route path="/dashboard" element={<RecruiterDashboard />} />
 
           {/* register page */}
           <Route path="/register" element={<RegistrationScreen />} />
