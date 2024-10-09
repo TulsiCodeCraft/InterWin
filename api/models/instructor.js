@@ -8,5 +8,5 @@ const InstructorSchema=new mongoose.Schema({
     image:String,
 })
 
-const instructorModel=mongoose.model("instructors",UsersSchema)
+const instructorModel=mongoose.model("instructors",InstructorSchema)
 module.exports=instructorModel
