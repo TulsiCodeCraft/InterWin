@@ -49,7 +49,7 @@ const PracticeSheet = ({ position }) => {
   }
 
   return (
-    <div className="p-4 bg-white w-full h-screen pb-20 ">
+    <div className="p-4 bg-white w-full h-full pb-20 ">
       <h2 className="text-2xl font-bold mb-4 text-purple-700">
         Practice Sheet for {activePosition.position}
       </h2>
@@ -96,24 +96,27 @@ const PracticeSheet = ({ position }) => {
                     >
                       {task.task}
                     </span>
-                    <a
-                      href={task.resources}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purple-500 hover:underline border-2 rounded-md p-1"
-                    >
-                      <img
-                        src="https://media.geeksforgeeks.org/gfg-gg-logo.svg"
-                        alt="GeeksforGeeks Logo"
-                        className="h-6 w-6 inline"
+                    <div className="flex items-center space-x-2">
+                      <a
+                        href={task.resources}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-500 hover:underline border-2 rounded-md p-1 flex place-items-center"
+                      >
+                        <img
+                          src="https://media.geeksforgeeks.org/gfg-gg-logo.svg"
+                          alt="GeeksforGeeks Logo"
+                          className="h-6 w-6 inline mr-1" // added margin right for spacing
+                        />
+                       
+                      </a>
+                      <input
+                        type="checkbox"
+                        checked={task.completed}
+                        onChange={() => handleTaskToggle(category, index)}
+                        className="cursor-pointer"
                       />
-                    </a>
-                    <input
-                      type="checkbox"
-                      checked={task.completed}
-                      onChange={() => handleTaskToggle(category, index)}
-                      className="cursor-pointer"
-                    />
+                    </div>
                   </li>
                 ))}
               </ul>
