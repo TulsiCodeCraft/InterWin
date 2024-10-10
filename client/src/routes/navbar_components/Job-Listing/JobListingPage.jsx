@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { jobListings } from '../../../lib/dummyData';
+import { useJobs } from '../../../context/JobContext';
 
 const JobListingPage = () => {
+  const { jobs } = useJobs();
   const [profile, setProfile] = useState('');
   const [location, setLocation] = useState('');
   const [workFromHome, setWorkFromHome] = useState(false);
@@ -39,7 +41,7 @@ const JobListingPage = () => {
   };
 
   // Filter jobs based on selected filters
-  const filteredJobs = jobListings.filter((job) => {
+  const filteredJobs = jobs.filter((job) => {
     const matchesProfile = profile === '' || job.title.toLowerCase().includes(profile.toLowerCase());
     const matchesLocation = location === '' || job.location.toLowerCase().includes(location.toLowerCase());
     const matchesWorkFromHome = !workFromHome || job.tags.includes('Remote') || job.tags.includes('Work From Home');

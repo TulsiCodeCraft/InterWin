@@ -1,12 +1,25 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose');
 
-const InstructorSchema=new mongoose.Schema({
-    name:String,
-    email:String,
-    CalendyUrl:String,
-    password:String,
-    image:String,
-})
+const instructorSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    calendlyUrl: {
+        type: String
+    },
+    image: {
+        type: String
+    }
+}, { timestamps: true });
 
-const instructorModel=mongoose.model("instructors",InstructorSchema)
-module.exports=instructorModel
+module.exports = mongoose.model('Instructor', instructorSchema);

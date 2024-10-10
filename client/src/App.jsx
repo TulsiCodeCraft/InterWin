@@ -45,6 +45,7 @@ import RecruiterDashboard from "./routes/recruiter/recruiterDashboard";
 import MyApplication from "./routes/application/application";
 import { ApplicationProvider } from "./context/ApplicationContext";
 import InstructorRegister from "./routes/instructor/InstructorRegister";
+import { JobProvider } from "./context/JobContext";
 
 
 
@@ -53,6 +54,7 @@ import InstructorRegister from "./routes/instructor/InstructorRegister";
 function App() {
   return (
     <>
+    <JobProvider>
      <ApplicationProvider>
       <Router>
       <Routes>
@@ -159,6 +161,7 @@ function App() {
           </Routes>
       </Router>
       </ApplicationProvider>
+      </JobProvider>
     </>
   );
 }

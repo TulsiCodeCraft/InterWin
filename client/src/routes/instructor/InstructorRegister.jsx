@@ -3,109 +3,146 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const InstructorRegister = () => {
-  const [image, setImage] = useState(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [calendlyUrl, setCalendlyUrl] = useState('');
-
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    calendlyUrl: '',
+  });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios.post('http://localhost:3001/register', { name, email, password, calendlyUrl, image })
-      .then(result => {
-        console.log(result);
-        navigate('/login');
-      })
-      .catch(err => console.log(err));
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleImageUpload = (e) => {
-    const file = e.target.files[0];
-    setImage(URL.createObjectURL(file));
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await axios.post('http://localhost:3001/instructor-register', formData);
+      if (response.data.message === "Registration successful") {
+        navigate('/InstructorLogin');
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Registration failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section className="text-gray-600 body-font flex items-center justify-center min-h-screen">
-      <div className="container mx-auto px-5 py-24 flex flex-wrap items-center">
-        <div className="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0 flex flex-col items-center">
-          <img className="w-80 h-80 mb-6 object-cover rounded" src="https://www.shutterstock.com/image-vector/happy-students-learning-college-flat-260nw-1903361545.jpg" alt="Instructor Poster" />
-          <h1 className="title-font font-medium text-3xl text-gray-900">Join as an Instructor</h1>
-          <p className="leading-relaxed mt-4 text-center">
-            Become a part of our instructor community and help learners develop new skills. Set up your profile, provide your credentials, and get started with easy scheduling via Calendly.
-          </p>
-        </div>
-        <div className="lg:w-2/5 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col w-full mt-10 md:mt-0">
-          <h2 className="text-gray-900 text-lg font-medium title-font mb-5 text-center">Instructor Sign Up</h2>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-              <input 
-                type="text" 
-                id="name" 
-                name="name" 
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-              />
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+          Register as an Instructor
+        </h2>
+      </div>
+
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+          {error && (
+            <div className="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+              <span className="block sm:inline">{error}</span>
             </div>
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-              <input 
-                type="password" 
-                id="password" 
-                name="password" 
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="calendlyUrl" className="block text-sm font-medium text-gray-700 mb-1">Calendly URL</label>
-              <input 
-                type="url" 
-                id="calendlyUrl" 
-                name="calendlyUrl" 
-                value={calendlyUrl}
-                onChange={(e) => setCalendlyUrl(e.target.value)}
-                className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-              />
-            </div>
-            <div className="mb-4">
-              <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">Upload Image</label>
-              <input 
-                type="file" 
-                id="image" 
-                name="image" 
-                onChange={handleImageUpload}
-                className="w-full bg-white rounded border border-gray-300 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" 
-              />
-            </div>
-            {image && (
-              <div className="mb-4">
-                <img src={image} alt="Instructor" className="w-full h-40 object-cover rounded" />
+          )}
+          
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                Name
+              </label>
+              <div className="mt-1">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
               </div>
-            )}
-            <button type="submit" className="w-full text-white bg-purple-500 border-0 py-2 px-8 focus:outline-none hover:bg-purple-600 rounded text-lg">Sign Up</button>
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                Email address
+              </label>
+              <div className="mt-1">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <div className="mt-1">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="new-password"
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  value={formData.password}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="calendlyUrl" className="block text-sm font-medium text-gray-700">
+                Calendly URL
+              </label>
+              <div className="mt-1">
+                <input
+                  id="calendlyUrl"
+                  name="calendlyUrl"
+                  type="url"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  value={formData.calendlyUrl}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <div>
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+              >
+                {loading ? 'Registering...' : 'Register'}
+              </button>
+            </div>
           </form>
-          <p className="text-xs text-gray-500 mt-3 text-center">
-            <Link to="/InstructorLogin">Already have an account? Log in</Link>
-          </p>
+
+          <div className="mt-6">
+            <div className="relative">
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">
+                  Already have an account? <Link to="/login" className="font-medium text-indigo-600 hover:text-indigo-500">Login</Link>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
