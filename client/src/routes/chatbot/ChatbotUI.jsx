@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Mic, Paperclip, Send } from 'lucide-react';
-import chatbot from '../../assets/images/chatbot.png';
+import { getGeminiResponse } from '../../utils/gemini';
+
+// Import the image using Vite's import.meta.url
+import chatbotImageUrl from '../../assets/images/chatbot.png';
 
 const ChatbotUI = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
@@ -14,10 +17,21 @@ const ChatbotUI = ({ isOpen, onClose }) => {
   ]);
   const [input, setInput] = useState('');
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
-      setMessages([...messages, { role: 'user', content: input }]);
+      const userMessage = { role: 'user', content: input };
+      setMessages([...messages, userMessage]);
       setInput('');
+
+      try {
+        const botResponse = await getGeminiResponse(input);
+        const botMessage = { role: 'bot', content: botResponse };
+        setMessages(prevMessages => [...prevMessages, botMessage]);
+      } catch (error) {
+        console.error('Error getting Gemini response:', error);
+        const errorMessage = { role: 'bot', content: 'Sorry, I encountered an error. Please try again.' };
+        setMessages(prevMessages => [...prevMessages, errorMessage]);
+      }
     }
   };
 
@@ -33,11 +47,11 @@ const ChatbotUI = ({ isOpen, onClose }) => {
       <div className="fixed top-20 right-4 w-96 h-[calc(100vh-80px)] bg-white rounded-lg shadow-xl z-50 flex flex-col">
         <div className="bg-white p-4 rounded-t-lg flex items-center justify-between shadow-md">
           <div className="flex items-center space-x-2">
-          <img
-                src={chatbot}
-                alt="Chatbot"
-                className="h-8 w-8 rounded-sm"
-              />
+            <img
+              src={chatbotImageUrl}
+              alt="Chatbot"
+              className="h-8 w-8 rounded-sm"
+            />
             <h2 className="text-xl font-semibold">InterWin</h2>
           </div>
           <p className="text-xs text-gray-500">Copilot uses AI. Check for mistakes.</p>

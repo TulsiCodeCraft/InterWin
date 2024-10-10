@@ -2,7 +2,7 @@ import  express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import UsersModel from './models/Users.js'
-import router from './routes/resumeRoutes.js'
+import resumeRoutes from './routes/resumeRoutes.js'
 
 const app = express()
 app.use(express.json())
@@ -32,7 +32,7 @@ app.post('/register', (req, res) => {
         .catch(err => res.json(err))
 })
 
-app.use('/api/resume-builder', router )
+app.use('/api/resume-builder', resumeRoutes )
 
 
 app.listen(3001, () => {

@@ -13,6 +13,8 @@ const getAllResumes = async (req, res) => {
   // Get a single resume by ID
   const getResumeById = async (req, res) => {
     const { id } = req.params;
+    console.log(id);
+    
   
     // Check if the provided ID is a valid MongoDB ObjectId
     if (!mongoose.Types.ObjectId.isValid(id)) {
