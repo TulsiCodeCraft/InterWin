@@ -7,7 +7,6 @@
   "directories": {
     "lib": "lib"
   },
-  
   "scripts": {
     "start": "nodemon index.js"
   },
